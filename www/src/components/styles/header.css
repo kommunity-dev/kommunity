@@ -1,0 +1,67 @@
+.header {
+  --headerPadding: .25rem .75rem;
+
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid var(--greyL2);
+  display: flex;
+  overflow: hidden;
+}
+
+.header__nav {
+  flex: 1;
+  text-align: right;
+  display: flex;
+  padding: var(--headerPadding);
+  align-items: center;
+}
+
+.header__links {
+  flex: 1;
+  & a {
+    margin: 0 0 0 1em;
+    &:hover svg {
+      opacity: .7 
+    }
+  }
+}
+
+@media (--tabletUp) {
+  .header {
+    --headerPadding: .5rem 1.5rem;
+  }
+  .header__links {
+    padding: 0 1.5em;
+  }
+}
+
+.header__sidebar-button {
+  border-left: 1px solid var(--greyL2);
+  border-right: 1px solid var(--greyL2);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: var(--headerPadding);
+  & svg {
+    width: 1.5rem;
+  }
+}
+
+.header__home {
+  font-family: var(--headingFamily);
+  color: var(--greyD2);
+  font-weight: 900;
+  font-size: 1.1rem;
+  &:visited {
+    color: var(--greyD2);
+  }
+  & svg {
+    vertical-align: middle;
+    width: 1.25em;
+  }
+}

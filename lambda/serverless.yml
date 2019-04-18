@@ -1,0 +1,27 @@
+service:
+  name: kompanionSiteLambda
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  fetchUrl:
+    handler: handler.fetchUrl
+    events:
+      - http:
+          method: get
+          path: fetch-url
+  submit:
+    handler: handler.submitResource
+    events:
+      - http:
+          method: post
+          path: submit-resource
+          cors:
+            origin: "http://localhost:8000"

@@ -1,0 +1,7 @@
+.layout-basis {
+  display: flex;
+}
+
+.layout-basis_content {
+  flex: 1;
+}

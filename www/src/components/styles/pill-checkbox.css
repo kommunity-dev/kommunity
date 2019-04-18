@@ -1,0 +1,52 @@
+.pill-checkbox {
+  color: var(--purpleL1);
+  display: inline-block;
+  position: relative;
+  margin: .35em .25em;
+  font-size: calc(var(--multiplier) * 7);
+  & > label {
+    border: .1em solid var(--purpleL1);
+    border-radius: 10em;
+    padding: .15em .85em;
+    cursor: pointer;
+    display: inline-block;
+    min-width: 4em;
+    transition: var(--transition);
+    user-select: none;
+  }
+  & > input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    &:checked ~ label {
+      color: var(--purpleD2);
+      background: var(--purpleL3);
+      border-color: var(--purpleL3);
+    }
+  }
+}
+
+.pill-checkbox_has-icon > label {
+  padding-right: .5em;
+  & > svg {
+    width: 1.5em;
+    vertical-align: middle;
+    margin-left: .25em;
+  }
+}
+
+.pill-checkbox__wrapper {
+  font-size: calc(var(--multiplier) * 7);
+  margin: .5em -.35em 2em;
+}
+
+@media (hover) {
+  .pill-checkbox > :matches(label:focus, input:focus ~ label) {
+    transform: scale(1.1) skew(-5deg);
+    filter: saturate(2) brightness(1.1);
+  }
+}
+

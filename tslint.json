@@ -1,0 +1,33 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-react-hooks",
+    "tslint-config-standard",
+    "tslint-config-prettier",
+    "tslint-react"
+  ],
+  "rules": {
+    "interface-name": true,
+    "no-this-assignment": [
+      true,
+      {
+        "allowed-names": ["^self$"],
+        "allow-destructuring": true
+      }
+    ],
+    "no-console": [false],
+    "no-var-requires": true,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case"
+    ],
+    "member-access": false,
+    "react-hooks-nesting": "error",
+    "object-literal-sort-keys": false,
+    "jsx-no-multiline-js": false
+  },
+  "rulesDirectory": []
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@kompanion/kommunity-root",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Workspace set-up for the kompanion website",
+  "workspaces": ["lambda", "www"],
+  "scripts": {
+    "develop:www": "yarn workspace @kompanion/kommunity-site gatsby develop",
+    "build:www": "yarn workspace @kompanion/kommunity-site gatsby build"
+  },
+  "keywords": [
+    "gatsby", "react", "learning", "content curation"
+  ],
+  "author": {
+    "name": "Henrique Cavalieri",
+    "email": "contact@kaordica.design",
+    "url": "https://kaordica.design"
+  },
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ]
+}

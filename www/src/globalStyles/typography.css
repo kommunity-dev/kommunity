@@ -1,0 +1,61 @@
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+:root {
+  /* Variables */
+  --bodyFamily: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --headingFamily: Merriweather, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  --multiplier: 2px;
+  --lineHeight: 170%;
+
+  /* Global typography */
+  font-family: var(--bodyFamily);
+  font-size: calc(var(--multiplier) * 8);
+  line-height: var(--lineHeight);
+}
+
+* {
+  font-family: inherit;
+}
+
+p {
+  font-size: inherit;
+  margin: 1.75em 0;
+}
+
+:--heading {
+  font-family: var(--headingFamily);
+  font-weight: 900;
+  line-height: var(--lineHeight);
+  color: var(--greyD3);
+  margin: 0;
+}
+
+h1 {
+  font-size: calc(var(--multiplier) * 10);
+}
+
+h2 {
+  font-size: calc(var(--multiplier) * 8);
+}
+
+h3 {
+  font-size: calc(var(--multiplier) * 8);
+}
+
+@media (--tabletUp) {
+  :root {
+    font-size: calc(var(--multiplier) * 9);
+  }
+
+  h1 {
+    font-size: calc(var(--multiplier) * 24);
+  }
+  
+  h2 {
+    font-size: calc(var(--multiplier) * 10);
+  }
+  
+  h3 {
+    font-size: calc(var(--multiplier) * 10);
+  }
+}

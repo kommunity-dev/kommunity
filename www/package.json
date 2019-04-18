@@ -1,0 +1,51 @@
+{
+  "name": "@kompanion/kommunity-site",
+  "main": "./gatsby-config.js",
+  "version": "0.0.0",
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "dependencies": {
+    "@dschau/gatsby-source-github": "^0.0.1",
+    "@kompanion/utils": "*",
+    "@kompanion/mock-data": "*",
+    "@mdx-js/mdx": "^1.0.5",
+    "@mdx-js/react": "^1.0.2",
+    "@mdx-js/tag": "^0.20.3",
+    "gatsby": "^2.3.16",
+    "gatsby-mdx": "^0.6.2",
+    "gatsby-plugin-postcss": "^2.0.7",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.2",
+    "gatsby-theme-koncrete": "*",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-use-form-state": "^0.9.0"
+  },
+  "scripts": {
+    "develop": "gatsby develop",
+    "serve": "gatsby serve",
+    "build": "gatsby build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-transform-typescript": "^7.4.0",
+    "@kompanion/types": "*",
+    "axios": "^0.18.0",
+    "cssnano": "^4.1.10",
+    "postcss-bem-linter": "^3.3.0",
+    "postcss-preset-env": "^6.6.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-loader": "^3.5.4",
+    "tslint-react": "^4.0.0",
+    "tslint-react-hooks": "^2.0.0",
+    "typescript": "^3.4.2"
+  }
+}

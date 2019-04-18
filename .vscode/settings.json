@@ -1,0 +1,22 @@
+{
+  "editor.tabSize": 2,
+  "breadcrumbs.enabled": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#3D22E2"
+  },
+  "javascript.validate.enable": false,
+  "standard.enable": true,
+  "standard.autoFixOnSave": true,
+  "standard.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "standard.usePackageJson": true,
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.css": "postcss",
+    "*.stylelintrc": "json"
+  }
+}

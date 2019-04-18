@@ -1,0 +1,52 @@
+.level-checkbox {
+  font-size: calc(var(--multiplier) * 9);
+  margin: calc(var(--multiplier) * 7) auto;
+  & .skill-level {
+    font-size: inherit;
+    text-align: left;
+    & span {
+      font-size: calc(var(--multiplier) * 7);
+    }
+  }
+  & > label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  & > input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    &:checked ~ label > .level-checkbox__indicator {
+      background: var(--successL1);
+      box-shadow: none;
+      & svg {
+        width: 60%;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.level-checkbox__indicator {
+  font-size: calc(var(--multiplier) * 10);
+  width: 1em;
+  height: 1em;
+  margin-right: .35em;
+  background: var(--greyL3);
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.2), inset 0px 0px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    transition: var(--transition);
+  & svg {
+    fill: var(--successD1);
+    width: 0;
+    opacity: 0;
+    transition: var(--transition);
+  }
+}

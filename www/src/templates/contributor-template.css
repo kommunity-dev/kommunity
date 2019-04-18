@@ -1,0 +1,35 @@
+.contributor-template {
+  max-width: 1240px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  & > header {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 2rem;
+  }
+}
+
+.contributor__picture {
+  width: 240px;
+  border-radius: 50%;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contributor__github-link {
+  margin: 1rem auto;
+  display: inline-block;
+  font-size: calc(var(--multiplier) * 12);
+  padding: .25em .75em;
+  box-shadow: var(--shadow1);
+  border-radius: 50px;
+  background: white;
+  & svg {
+    fill: var(--purpleL2);
+    width: 1em;
+    vertical-align: middle;
+  }
+}
+
+.contributor__suggestions {
+  margin-top: 3.5rem;
+}

@@ -1,0 +1,28 @@
+/*
+  Breakpoints for each device.
+  Phones are usually capped at 468px, but the rest of
+  the breakpoints represent when a set device starts
+*/
+:root {
+  --bpPhone: 468px;
+  --bpTablet: 768px;
+  --bpLarge: 940px;
+  --bpLaptop: 1366px;
+  --bpDesktop: 1920px;
+}
+
+@custom-media --phone (max-width: 467px);
+/* Note stands for those big-ass phones called "Notes" 😝 */
+@custom-media --noteUp (min-width: 468px);
+
+@custom-media --smThanTablet (max-width: 767px);
+@custom-media --tabletUp (min-width: 768px);
+
+@custom-media --smThanLarge (max-width: 939px);
+@custom-media --largeUp (min-width: 940px);
+
+@custom-media --smThanLaptop (max-width: 1365px);
+@custom-media --laptopUp (min-width: 1366px);
+
+@custom-media --smThanDesktop (max-width: 1919px);
+@custom-media --desktopUp (min-width: 1920px);

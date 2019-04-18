@@ -1,0 +1,4 @@
+[build]
+  functions = "lambda"
+  publish = "www/public"
+  command = "yard build:www"

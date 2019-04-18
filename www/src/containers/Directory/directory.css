@@ -1,0 +1,31 @@
+.directory__main {
+  padding: 0 .75rem;
+}
+
+.directory__empty-search {
+  text-align: center;
+  margin: 4rem auto;
+  max-width: 350px;
+  & svg {
+    width: 120px;
+  }
+}
+  
+.directory__sidebar {
+  left: 0;
+  transform: translateX(-120%);
+  & legend {
+    font-family: var(--headingFamily);
+    font-size: calc(var(--multiplier) * 8);
+    color: var(--greyD2);
+  }
+  &::-webkit-scrollbar {
+    width: .5rem;
+  }
+}
+
+@media (--largeUp) {
+  .directory__main {
+    padding: .5rem 1.5rem .5rem 1.5rem;
+  }
+}

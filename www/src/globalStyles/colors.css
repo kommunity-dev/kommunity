@@ -1,0 +1,39 @@
+:root {
+  /* Colors */
+  /* L: light; D: dark */
+  --greyL3: hsl(210, 17%, 98%);
+  --greyL2: hsl(210, 16%, 93%);
+  --greyL1: hsl(210, 14%, 83%);
+  --grey: hsl(210, 11%, 71%);
+  --greyD1: hsl(210, 7%, 56%);
+  --greyD2: hsl(210, 10%, 23%);
+  --greyD3: hsl(213, 12%, 15%);
+  
+  --purpleL3: hsl(249, 100%, 91%);
+  --purpleL2: hsl(249, 90%, 81%);
+  --purpleL1: hsl(249, 80%, 71%);
+  --purple: hsl(248, 77%, 51%);
+  --purpleD1: hsl(249, 81%, 35%);
+  --purpleD2: hsl(249, 89%, 25%);
+  --purpleD3: hsl(249, 100%, 17%);
+  
+  --tealL3: hsl(173, 100%, 95%);
+  --tealL2: hsl(173, 94%, 88%);
+  --tealL1: hsl(173, 81%, 75%);
+  --teal: hsl(173, 69%, 51%);
+  --tealD1: hsl(173, 78%, 34%);
+  --tealD2: hsl(173, 96%, 21%);
+  --tealD3: hsl(173, 100%, 14%);
+
+  --tealGradient: linear-gradient(15deg, var(--teal) 0%, hsl(209, 69%, 51%) 100%);
+  --purpleGradient: linear-gradient(15deg, var(--purple) 0%, hsl(202, 77%, 51%) 100%);
+
+  --successD1: hsl(142, 62%, 28%);
+  --successL1: hsl(142, 55%, 75%);
+
+  color: var(--greyD2);
+}
+
+body {
+  background: var(--greyL3);
+}

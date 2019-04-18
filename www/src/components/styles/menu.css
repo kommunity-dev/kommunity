@@ -1,0 +1,55 @@
+/* See commonComponents -> .sidebar */
+
+.menu {
+  right: 0;
+  transform: translateX(120%);
+  display: flex;
+  flex-direction: column;
+  & .sidebar__header svg {
+    transform: rotate(180deg)
+  }
+  & .sidebar__content {
+    flex: 1;
+  }
+}
+
+.menu__nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  & > div:first-of-type {
+    flex: 1;
+  }
+}
+
+.menu__link {
+  display: flex;
+  align-items: flex-start;
+  color: var(--greyD1);
+  font-weight: 400;
+  font-size: calc(var(--multiplier) * 7);
+  margin-bottom: 1.5rem;
+  & svg {
+    vertical-align: middle;
+    flex: 0 0 1.75em;
+    opacity: .7;
+    margin-right: .75em;
+  }
+  & span {
+    display: block;
+  }
+}
+
+.menu__link-title {
+  color: var(--purple);
+  font-size: calc(var(--multiplier) * 8);
+}
+
+.menu__link_highlight {
+  & .menu__link-title {
+    font-weight: 700;
+  }
+  & svg {
+    fill: var(--purpleL2)
+  }
+}

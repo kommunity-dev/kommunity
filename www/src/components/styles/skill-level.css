@@ -1,0 +1,21 @@
+.skill-level {
+  flex: 1;
+  text-align: right;
+  font-size: calc(var(--multiplier) * 7);
+  color: var(--purpleL1);
+  & > span {
+    vertical-align: middle;
+    background: var(--purpleL3);
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    padding: .3em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .35em;
+  }
+  & svg {
+    width: 80%;
+  }
+}
