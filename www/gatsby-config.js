@@ -76,6 +76,13 @@ module.exports = {
         respectDNT: true
       }
     },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint:
+          'https://kaordi.us19.list-manage.com/subscribe/post?u=3c6e77efbbd8dd39c075858be&amp;id=36ab310d3e'
+      }
+    },
     `gatsby-plugin-netlify`
   ]
 }

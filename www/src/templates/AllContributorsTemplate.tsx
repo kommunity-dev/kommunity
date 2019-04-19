@@ -9,7 +9,7 @@ import './all-contributors.css'
 export interface IContributorCard {
   handle: string
   fields: {
-    avatar32: string
+    avatar100: string
     name: string
     suggestionsCount: number
   }
@@ -25,18 +25,6 @@ export const AllContributorsTemplate: React.SFC<
   IAllContributorsTemplateProps
 > = ({ contributors }) => {
   const { length: count } = contributors
-  const mockContributors = [
-    ...contributors,
-    ...contributors,
-    ...contributors,
-    ...contributors,
-    ...contributors,
-    ...contributors,
-    ...contributors,
-    ...contributors,
-    ...contributors,
-    ...contributors
-  ]
   return (
     <>
       <Helmet>
@@ -51,9 +39,9 @@ export const AllContributorsTemplate: React.SFC<
         <h1>All contributors</h1>
         <p>Thank you all that make Kommunity possible!</p>
         <section className="all-contributors__container">
-          {mockContributors.map(({ node: { handle, fields } }) => (
+          {contributors.map(({ node: { handle, fields } }) => (
             <div className="contributor-card" key={handle}>
-              <img src={fields.avatar32} alt={`${fields.name}'s picture`} />
+              <img src={fields.avatar100} alt={`${fields.name}'s picture`} />
               <h2>
                 <Link to={`/contributors/${handle}`}>@{handle}</Link>
               </h2>

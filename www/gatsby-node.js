@@ -137,6 +137,7 @@ exports.onCreateNode = async ({ node, actions, getNodes, ...rest }) => {
       query {
         user(login: "${handle}") {
           avatar32: avatarUrl(size: 32)
+          avatar100: avatarUrl(size: 100)
           avatar240: avatarUrl(size: 240)
           name
           bio
@@ -157,27 +158,13 @@ exports.onCreateNode = async ({ node, actions, getNodes, ...rest }) => {
       )
       const { data } = ghRes
       if (data.data && data.data.user) {
-        const { avatar32, avatar240, name, bio } = data.data.user
-        createNodeField({
-          node,
-          name: 'avatar32',
-          value: avatar32
-        })
-        createNodeField({
-          node,
-          name: 'avatar240',
-          value: avatar240
-        })
-        createNodeField({
-          node,
-          name: 'name',
-          value: name
-        })
-        createNodeField({
-          node,
-          name: 'bio',
-          value: bio
-        })
+        for (const key of Object.keys(data.data.user)) {
+          createNodeField({
+            node,
+            name: key,
+            value: data.data.user[key]
+          })
+        }
       }
     } catch (error) {
       console.info(`Couldn't fetch @${handle}'s GH profile`)

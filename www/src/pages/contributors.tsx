@@ -29,7 +29,7 @@ export const pageQuery = graphql`
         node {
           handle
           fields {
-            avatar32
+            avatar100
             name
             suggestionsCount
           }

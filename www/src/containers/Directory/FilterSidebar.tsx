@@ -7,9 +7,9 @@ import {
   contentTopics
 } from '@kompanion/mock-data'
 import { formatIcons } from '../../components/formatIcons'
+import { ChevronIcon } from '../../components/generalIcons'
 import LevelCheckbox from '../../components/LevelCheckbox'
 import { NavContext } from '../../layouts/LayoutBasis'
-import { ChevronIcon } from '../../components/generalIcons'
 
 export interface IFilterSidebarProps {
   label: any

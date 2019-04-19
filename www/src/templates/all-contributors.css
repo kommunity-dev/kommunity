@@ -19,8 +19,8 @@
 
 .all-contributors__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 175px));
-  grid-gap: .75rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 140px));
+  grid-gap: .5rem;
   justify-content: center;
 }
 
@@ -28,21 +28,41 @@
   background: white;
   box-shadow: var(--shadow3);
   border-radius: .5rem;
-  padding: 1.25rem 1.25rem;
+  padding: 1rem .5rem;
   & img {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2);
   }
   & h2 {
     color: var(--purple);
     font-weight: 700;
-    font-size: calc(var(--multiplier) * 10);
+    font-size: calc(var(--multiplier) * 8);
   }
   & p {
     margin: 0;
-    font-size: calc(var(--multiplier) * 9);
+    font-size: calc(var(--multiplier) * 7);
     color: var(--greyD2);
+  }
+}
+
+@media (--tabletUp) {
+  .contributor-card {
+    padding: 1.25rem;
+    & h2 {
+      font-size: calc(var(--multiplier) * 10);
+    }
+    & p {
+      font-size: calc(var(--multiplier) * 9);
+    }
+    & img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .all-contributors__container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 175px));
+    grid-gap: .75rem;
   }
 }

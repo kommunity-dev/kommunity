@@ -30,15 +30,6 @@
   }
 }
 
-@media (--tabletUp) {
-  .header {
-    --headerPadding: .5rem 1.5rem;
-  }
-  .header__links {
-    padding: 0 1.5em;
-  }
-}
-
 .header__sidebar-button {
   border-left: 1px solid var(--greyL2);
   border-right: 1px solid var(--greyL2);
@@ -47,8 +38,13 @@
   align-items: center;
   background: transparent;
   padding: var(--headerPadding);
+  transition: var(--transition);
   & svg {
     width: 1.5rem;
+  }
+  &.disabled {
+    width: 0;
+    opacity: 0;
   }
 }
 
@@ -80,5 +76,11 @@
     width: 1.25em;
     vertical-align: middle;
     fill: var(--purpleL2);
+  }
+}
+
+@media (--tabletUp) {
+  .header {
+    --headerPadding: .5rem 1.5rem;
   }
 }

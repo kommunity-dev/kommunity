@@ -4,10 +4,10 @@ import * as React from 'react'
 import { ChevronIcon, CollaboratorsIcon, MailIcon } from './generalIcons'
 
 import { NavContext } from '../layouts/LayoutBasis'
+import { BulbIcon } from './formatIcons'
 import { GithubIcon, TwitterIcon } from './socialIcons'
 
 import './styles/menu.css'
-import { BulbIcon } from './formatIcons'
 
 export const Menu: React.SFC<{}> = () => {
   const { toggleMenu, menuOpen, toggleSubscribe } = React.useContext(NavContext)
@@ -22,7 +22,7 @@ export const Menu: React.SFC<{}> = () => {
       <main className="sidebar__content">
         <nav className="menu__nav">
           <div>
-            <div className="hide_note-up">
+            <div className="hide_large-up">
               <Link
                 to="/contributing"
                 className="button button_primary menu__cta"
@@ -42,10 +42,10 @@ export const Menu: React.SFC<{}> = () => {
           </div>
           <div className="menu__social-wrapper">
             <a
-              href="https://twitter.com/kommunityDev"
+              href="https://twitter.com/devKommunity"
               target="_blank"
               rel="noopener"
-              aria-title="Link to kommunity's Twitter"
+              title="Link to kommunity's Twitter"
             >
               <TwitterIcon />{' '}
             </a>
@@ -53,7 +53,7 @@ export const Menu: React.SFC<{}> = () => {
               href="https://github.com/kompanion/kommunity"
               target="_blank"
               rel="noopener"
-              aria-title="Link to kommunity's GitHub repository"
+              title="Link to kommunity's GitHub repository"
             >
               <GithubIcon />{' '}
             </a>

@@ -40,7 +40,7 @@ export const Header: React.SFC<IHeaderProps> = ({
           </span>
         </Link>
         {/* TODO: TEXT SEARCH HERE */}
-        <div className="header__links hide_phone">
+        <div className="header__links hide_sm-than-large">
           {includeSubscribe && (
             <button
               className="button button_secondary"
@@ -57,17 +57,20 @@ export const Header: React.SFC<IHeaderProps> = ({
             target="_blank"
             rel="noopener"
             className="hide_phone header__github"
-            aria-title="Link to kommunity's GitHub repository"
+            title="Link to kommunity's GitHub repository"
           >
             <GithubIcon />{' '}
           </a>
         </div>
       </nav>
-      {!ctx.menuOpen && includeMenu && (
+      {includeMenu && (
         <button
-          className="header__sidebar-button"
+          className={`header__sidebar-button ${
+            !ctx.menuOpen ? '' : 'disabled'
+          }`}
+          disabled={ctx.menuOpen}
           onClick={ctx.toggleMenu}
-          aria-title="Button to open the menu"
+          title="Button to open the menu"
         >
           <MenuIcon />
         </button>

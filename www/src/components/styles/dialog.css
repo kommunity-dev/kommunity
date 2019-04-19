@@ -1,0 +1,77 @@
+[data-reach-dialog-overlay] {
+  z-index: 100;
+  background: hsla(249, 89%, 25%, .3);
+}
+
+[data-reach-dialog-content] {
+  background: #FFFFFF;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 32px;
+  padding: 1.5rem 1rem;
+  width: 90vw;
+  max-width: 750px;
+  position: relative;
+}
+
+.dialog {
+  text-align: center;
+  & h1 {
+    font-size: calc(var(--multiplier) * 12);
+  }
+}
+
+.dialog__icon {
+  vertical-align: middle;
+  background: var(--purpleL3);
+  border-radius: 50%;
+  font-size: calc(var(--multiplier) * 15);
+  width: 2em;
+  height: 2em;
+  padding: .3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto .5rem;
+  & svg {
+    width: 80%;
+  }
+  &.success {
+    background: var(--successL1);
+  }
+}
+
+.dialog__input-helper {
+  color: var(--greyD1);
+  margin: 0 0 .5em;
+  display: block;
+  font-size: calc(var(--multiplier) * 8);
+}
+
+.dialog__close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  outline: none;
+  transition: var(--transition) transform;
+  & svg {
+    transition: var(--transition) fill;
+    width: 1rem;
+    fill: var(--grey);
+  }
+  &:hover, &:focus {
+    transform: scale(1.1);
+    & svg {
+      fill: var(--alertD1);
+    }
+  }
+}
+
+@media (--tabletUp) {
+  [data-reach-dialog-content] {
+    padding: 2.5rem 4rem;
+  }
+  .dialog {
+    margin: 0 auto;
+    max-width: 560px;
+  }
+}

@@ -84,6 +84,21 @@ export const ChevronIcon: React.SFC<IIconProps> = ({
   </svg>
 )
 
+export const CrossIcon: React.SFC<IIconProps> = ({ fill = 'currentColor' }) => (
+  <svg viewBox="0 0 100 100" fill={fill} xmlns="http://www.w3.org/2000/svg">
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M97.9079 2.09209c2.7891 2.78946 2.7891 7.31207 0 10.10151L12.1936 97.9079c-2.78944 2.7891-7.31205 2.7891-10.10151 0-2.789455-2.7895-2.789455-7.3121 0-10.1015L87.8064 2.09209c2.7894-2.789455 7.312-2.789455 10.1015 0z"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M2.09209 2.09209c2.78946-2.789455 7.31207-2.789455 10.10151 0L97.9079 87.8064c2.7891 2.7894 2.7891 7.312 0 10.1015-2.7895 2.7891-7.3121 2.7891-10.1015 0L2.09209 12.1936c-2.789455-2.78944-2.789455-7.31205 0-10.10151z"
+    />
+  </svg>
+)
+
 export const CollaboratorsIcon: React.SFC<IIconProps> = ({
   fill = 'currentColor'
 }) => (

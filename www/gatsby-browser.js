@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import LayoutBasis from './src/layouts/LayoutBasis.tsx'
 
@@ -13,6 +14,14 @@ import './src/globalStyles/helpers.css'
 
 import './src/components/styles/commonComponents.css'
 
+import favicon from './src/images/favicon.png'
+
 export const wrapPageElement = ({ element, props }) => (
-  <LayoutBasis {...props}>{element}</LayoutBasis>
+  <>
+    <Helmet>
+      <link rel="icon" href={favicon} />
+      <meta name="robots" content="noindex nofollow" />
+    </Helmet>
+    <LayoutBasis {...props}>{element}</LayoutBasis>
+  </>
 )

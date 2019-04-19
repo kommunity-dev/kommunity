@@ -28,7 +28,7 @@ export const ContentCard: React.SFC<IContentCard> = ({
       <header>
         <section className="content__meta">
           <span className="content__topic">{topic}</span>
-          <SkillLevelIndicator level={skillLevel} />
+          {skillLevel && <SkillLevelIndicator level={skillLevel} />}
         </section>
         <a href={url} target="_blank" rel="noopener" className="content__title">
           <h2>{title}</h2>
@@ -48,7 +48,7 @@ export const ContentCard: React.SFC<IContentCard> = ({
         {textToParagraphs(collaborator.comment)}
       </main>
       <address>
-        <a className="content__author" href={`/users/${handle}`}>
+        <a className="content__author" href={`/contributors/${handle}`}>
           <img
             src={avatarUrl}
             alt={`Profile picture from ${name}`}

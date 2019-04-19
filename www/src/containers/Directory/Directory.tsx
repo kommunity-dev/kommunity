@@ -1,21 +1,13 @@
 import { IContentCard, TFormats, TSkillLevels, TTopics } from '@kompanion/types'
-import { capitalizeFirstLetter } from '@kompanion/utils'
-import {
-  contentFormats,
-  contentLevels,
-  contentTopics
-} from '@kompanion/mock-data'
 import * as React from 'react'
 import { useFormState } from 'react-use-form-state'
 
 import ContentCard from '../../components/ContentCard'
-import { formatIcons } from '../../components/formatIcons'
+import EmptySearch from './EmptySearch'
+import FilterSidebar from './FilterSidebar'
 
-import LevelCheckbox from '../../components/LevelCheckbox'
 import '../../components/styles/pill-checkbox.css'
 import './directory.css'
-import FilterSidebar from './FilterSidebar'
-import EmptySearch from './EmptySearch'
 
 export interface IDirectoryProps {
   content: Array<{
@@ -41,7 +33,6 @@ export const Directory: React.SFC<IDirectoryProps> = ({
   children
 }) => {
   const [filteredContent, setContent] = React.useState(content)
-
   const [filterState, { checkbox, label }] = useFormState<IFilterFields>(
     initialState,
     {
@@ -58,6 +49,7 @@ export const Directory: React.SFC<IDirectoryProps> = ({
     const { formats, skillLevels, topics } = nextState
     const newContent = await content.filter(({ node }) => {
       if (
+        typeof node.skillLevel === 'string' &&
         node.skillLevel !== 'allLevels' &&
         skillLevels.indexOf(node.skillLevel) < 0
       ) {

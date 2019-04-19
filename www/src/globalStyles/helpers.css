@@ -18,6 +18,10 @@
   margin-top: 1rem;
 }
 
+.mg-bottom_none {
+  margin-bottom: 0;
+}
+
 @media (--phone) {
   .hide_phone {
     display: none !important;
@@ -32,6 +36,18 @@
 
 @media (--tabletUp) {
   .hide_tablet-up {
+    display: none !important;
+  }
+}
+
+@media (--largeUp) {
+  .hide_large-up {
+    display: none !important;
+  }
+}
+
+@media (--smThanLarge) {
+  .hide_sm-than-large {
     display: none !important;
   }
 }

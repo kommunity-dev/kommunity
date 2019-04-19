@@ -69,23 +69,27 @@ textarea.form__input {
   min-height: 200px;
   border-radius: 16px;
 }
-/* 
-.form__nested-button {
-  position: relative;
-  max-width: 450px;
-  & .form__input {
-    width: 100%;
-  }
-  & .button {
-    position: absolute;
-    right: .5em;
-    font-size: .9em;
-    top: 50%;
-    transform: translateY(-50%);
-    min-width: 0;
-  }
+
+.form__group_inline-btn button {
+  margin-top: .75rem;
 }
 
-.form__error {
-  font-size: .9em;
-} */
+@media (--noteUp) {
+  .form__group_inline-btn {
+    position: relative;
+    & .button {
+      margin-top: 0;
+      position: absolute;
+      right: .35rem;
+      bottom: .35rem;
+    }
+    &.small {
+      max-width: 25em;
+      margin: 0 auto 0;
+      font-size: calc(var(--multiplier) * 8);
+      & .form__input, & .button {
+        font-size: inherit;
+      }
+    }
+  }
+}

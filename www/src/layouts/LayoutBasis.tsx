@@ -1,32 +1,38 @@
 import * as React from 'react'
-import Head from 'react-helmet'
 
+import FeedbackDialog from '../components/FeedbackDialog'
 import Menu from '../components/Menu'
-import favicon from '../images/favicon.png'
+import SubscribeDialog from '../components/SubscribeDialog'
+
+import '../components/styles/dialog.css'
 
 interface INavState {
   menuOpen: boolean
   filterOpen: boolean
   subscribeOpen: boolean
+  feedbackOpen: boolean
 }
 
 interface INavContext extends INavState {
   toggleMenu: () => void
   toggleFilters: () => void
   toggleSubscribe: () => void
+  toggleFeedback: () => void
 }
 
 const initialState: INavState = {
   menuOpen: false,
   filterOpen: false,
-  subscribeOpen: false
+  subscribeOpen: false,
+  feedbackOpen: false
 }
 
 const initialContext: INavContext = {
   ...initialState,
   toggleMenu: () => undefined,
   toggleFilters: () => undefined,
-  toggleSubscribe: () => undefined
+  toggleSubscribe: () => undefined,
+  toggleFeedback: () => undefined
 }
 
 const hasHtmlEl =
@@ -72,6 +78,11 @@ export const LayoutBasis: React.SFC<{}> = ({ children }) => {
   const toggleSubscribe = () =>
     setNavState({ ...navState, subscribeOpen: !navState.subscribeOpen })
 
+  const toggleFeedback = () => {
+    setNavState({ ...navState, feedbackOpen: !navState.feedbackOpen })
+    sessionStorage.setItem('hasPoppedUp', 'true')
+  }
+
   const closeAllSidebars = () => {
     setNavState({ ...navState, filterOpen: false, menuOpen: false })
     toggleHtmlPadding(false, 'right')
@@ -82,15 +93,25 @@ export const LayoutBasis: React.SFC<{}> = ({ children }) => {
     ...navState,
     toggleMenu,
     toggleFilters,
-    toggleSubscribe
+    toggleSubscribe,
+    toggleFeedback
   }
+
+  React.useEffect(() => {
+    const hasPoppedUp = sessionStorage.getItem('hasPoppedUp')
+    const feedbackGiven = localStorage.getItem('feedbackGiven')
+    if (hasPoppedUp === 'true' || feedbackGiven === 'true') {
+      return
+    } else {
+      const timeToPopUp = window.setTimeout(toggleFeedback, 3000)
+      return () => {
+        window.clearTimeout(timeToPopUp)
+      }
+    }
+  }, [])
 
   return (
     <>
-      <Head>
-        <link rel="icon" href={favicon} />
-        <meta name="robots" content="noindex nofollow" />
-      </Head>
       {(navState.menuOpen || navState.filterOpen) && (
         <div
           aria-hidden={true}
@@ -98,6 +119,14 @@ export const LayoutBasis: React.SFC<{}> = ({ children }) => {
           onClick={closeAllSidebars}
         />
       )}
+      <FeedbackDialog
+        isOpen={navState.feedbackOpen}
+        toggleDialog={toggleFeedback}
+      />
+      <SubscribeDialog
+        isOpen={navState.subscribeOpen}
+        toggleDialog={toggleSubscribe}
+      />
       <NavContext.Provider value={navContext}>
         <>
           <Menu />

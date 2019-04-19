@@ -4,13 +4,7 @@
 
 ### Must have
 
-- mobile
-- Form submission
-  - refine styling
-  - Submission go back
 - **more** (_and more relavant_) **content**
-- Newsletter 
-- 404
 - "via twitter" in ContentCard for influencers
 - Meta tags for SEO and social sharing
   - especially cards for twitter!

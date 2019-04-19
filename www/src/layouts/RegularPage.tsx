@@ -5,7 +5,18 @@ import Header from '../components/Header'
 
 import './regular-page.css'
 
-export const RegularPage: React.SFC<{}> = ({ children, pageContext }) => {
+interface IRegularPage {
+  pageContext: {
+    frontmatter: {
+      [key: string]: any
+    }
+  }
+}
+
+export const RegularPage: React.SFC<IRegularPage> = ({
+  children,
+  pageContext
+}) => {
   const { title, metaDescription } = pageContext.frontmatter
   return (
     <>
