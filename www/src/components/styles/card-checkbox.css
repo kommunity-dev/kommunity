@@ -1,0 +1,57 @@
+.card-checkbox {
+  display: inline-block;
+  position: relative;
+  margin: .5rem;
+  font-size: calc(var(--multiplier) * 9);
+  & > label {
+    background: white;
+    box-shadow: var(--shadow3);
+    border-radius: .5rem;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    transition: var(--transition);
+    user-select: none;
+    & > div {
+      background: var(--purpleL3);
+      border-radius: 50%;
+      width: 4em;
+      height: 4em;
+      padding: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 1rem;
+      & svg {
+        width: 100%;
+        fill: var(--purple);
+      }
+    }
+  }
+  & > input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    &:checked ~ label {
+      color: white;
+      background: var(--purpleD3);
+    }
+    &:disabled  ~ label {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@media (hover) {
+  .card-checkbox > :matches(label:focus, input:focus ~ label) {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+    box-shadow: var(--shadow4)
+  }
+}
+

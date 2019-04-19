@@ -25,31 +25,38 @@
 .menu__link {
   display: flex;
   align-items: flex-start;
-  color: var(--greyD1);
+  color: var(--purple);
   font-weight: 400;
   font-size: calc(var(--multiplier) * 7);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5em;
+  padding: 0;
+  max-width: none;
   & svg {
     vertical-align: middle;
     flex: 0 0 1.75em;
     opacity: .7;
     margin-right: .75em;
-  }
-  & span {
-    display: block;
+    fill: var(--purpleL1);
   }
 }
 
-.menu__link-title {
-  color: var(--purple);
-  font-size: calc(var(--multiplier) * 8);
-}
-
-.menu__link_highlight {
-  & .menu__link-title {
-    font-weight: 700;
+.menu__social-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80%;
+  margin: 0 auto 1rem;
+  & > a {
+    flex: 0 1 35px;
+    margin: 0 .5em;
   }
   & svg {
-    fill: var(--purpleL2)
+    width: 100%;
+    fill: var(--grey)
   }
+}
+
+.menu__cta {
+  width: 100%;
+  margin: 0 0 2rem;
 }

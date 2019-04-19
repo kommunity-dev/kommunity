@@ -1,13 +1,14 @@
 .form__group {
-  margin: 3rem auto;
+  margin: 4rem 0;
   position: relative;
   padding-left: 2.5rem;
+  max-width: 450px;
   & > label, & > legend {
     font-family: var(--headingFamily);
     font-weight: 900;
     font-size: calc(var(--multiplier) * 12);
     display: block;
-    margin-bottom: .75rem;
+    margin-bottom: 1rem;
   }
   & > .number-indicator {
     position: absolute;
@@ -18,11 +19,14 @@
   &:disabled {
     opacity: .8
   }
+  &.full-width {
+    max-width: none;
+    width: 100%;
+  }
 }
 
 .form__input {
   width: 100%;
-  max-width: 450px;
   display: block;
   background: white;
   border-radius: 50px;
@@ -35,6 +39,29 @@
   }
   &:disabled {
     background: var(--greyL2)
+  }
+  &.alert {
+    box-shadow: inset 0px 2px 2px rgba(155, 63, 31, 0.25), inset 0px 0px 1px rgba(155, 63, 31, 0.25);
+  }
+}
+
+.form__input-validation {
+  font-size: calc(var(--multiplier) * 7);
+  padding: 0 .5rem 0 1.5rem;
+}
+
+.form__input-error {
+  color: var(--alertL1)
+}
+
+.form__input-info {
+  text-align: right;
+  color: var(--greyD1);
+  & b {
+    color: var(--greyD2);
+  }
+  &.alert > b {
+    color: var(--alertL1)
   }
 }
 

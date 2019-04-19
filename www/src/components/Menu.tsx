@@ -22,58 +22,39 @@ export const Menu: React.SFC<{}> = () => {
         <nav className="menu__nav">
           <div>
             <div className="hide_note-up">
-              <button
-                className="button button_secondary hide_noteUp"
-                onClick={toggleSubscribe}
-              >
-                Subscribe
-              </button>
               <Link
                 to="/contributing"
-                className="button button_primary hide_noteUp"
+                className="button button_primary menu__cta"
               >
                 Contribute
               </Link>
+              <button className="menu__link" onClick={toggleSubscribe}>
+                <MailIcon /> Subscribe
+              </button>
             </div>
-            <Link
-              to="/contributors"
-              className="menu__link menu__link_highlight"
-            >
-              <CollaboratorsIcon />{' '}
-              <span className="menu__link-title">All contributors</span>
+            <Link to="/contributors" className="menu__link">
+              <CollaboratorsIcon /> All contributors
             </Link>
           </div>
-          <div>
+          <div className="menu__social-wrapper">
             <a
               href="https://twitter.com/kommunityDev"
               target="_blank"
               rel="noopener"
-              className="menu__link"
+              aria-title="Link to kommunity's Twitter"
             >
               <TwitterIcon />{' '}
-              <span>
-                <span className="menu__link-title">Follow kompanion</span>
-                <span>We’ll be posting updates and new links</span>
-              </span>
             </a>
             <a
-              href="https://github.com/kompanion/kompanion"
+              href="https://github.com/kompanion/kommunity"
               target="_blank"
               rel="noopener"
-              className="menu__link"
+              aria-title="Link to kommunity's GitHub repository"
             >
               <GithubIcon />{' '}
-              <span>
-                <span className="menu__link-title">Github</span>
-                <span>All of our code is open source 😁</span>
-              </span>
             </a>
-            <a href="mailto:hello@kommunity.dev" className="menu__link">
+            <a href="mailto:hello@kommunity.dev">
               <MailIcon />{' '}
-              <span>
-                <span className="menu__link-title">Say hi!</span>
-                <span>Any feedbacks? How can we better help you?</span>
-              </span>
             </a>
           </div>
           <p style={{ marginBottom: '1rem', fontSize: '.9em' }}>

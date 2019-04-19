@@ -17,7 +17,7 @@ export interface IIndexPageProps {
   }
 }
 
-const firstParagraph = `Learning Gatsby, React and the JAMstack can be fun and more collaborative. Count on valuable, community-curated content as your kompanion.\n__Why count on old fashioned link aggregators when you have recommendations by your fellow developers?__ 😉`
+const firstParagraph = `Count on valuable, kommunity-curated content as your kompanion in **creating the web of the future**.\n__Why count on old fashioned link aggregators when you have recommendations by your fellow developers?__ 😉`
 
 export const IndexPage: React.SFC<IIndexPageProps> = ({ data }) => {
   return (
@@ -27,7 +27,7 @@ export const IndexPage: React.SFC<IIndexPageProps> = ({ data }) => {
       </Helmet>
       <Header includeFilter={true} />
       <Directory content={data.content.edges}>
-        <div style={{ maxWidth: '600px', fontSize: '.9rem' }}>
+        <div style={{ maxWidth: '560px', fontSize: '.9rem' }}>
           {textToParagraphs(firstParagraph)}
         </div>
       </Directory>

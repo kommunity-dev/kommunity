@@ -31,6 +31,9 @@
   --successD1: hsl(142, 62%, 28%);
   --successL1: hsl(142, 55%, 75%);
 
+  --alertL1: hsl(23, 82%, 50%);
+  --alertD1: hsl(15, 67%, 36%);
+
   color: var(--greyD2);
 }
 

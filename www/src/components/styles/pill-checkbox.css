@@ -26,6 +26,10 @@
       background: var(--purpleL3);
       border-color: var(--purpleL3);
     }
+    &:disabled  ~ label {
+      opacity: .5;
+      cursor: not-allowed;
+    }
   }
 }
 

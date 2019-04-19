@@ -64,4 +64,21 @@
     vertical-align: middle;
     width: 1.25em;
   }
+  & span > i {
+    font-size: .75em;
+    vertical-align: baseline;
+    font-style: normal;
+    color: var(--greyD1);
+    font-family: var(--bodyFamily);
+    font-weight: 500;
+  }
+}
+
+.header__github {
+  margin-left: 1.75em !important;
+  & svg {
+    width: 1.25em;
+    vertical-align: middle;
+    fill: var(--purpleL2);
+  }
 }

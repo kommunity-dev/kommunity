@@ -68,6 +68,13 @@ module.exports = {
           }`
         ]
       }
+    },
+    {
+      resolve: `gatsby-plugin-amplitude-analytics`,
+      options: {
+        apiKey: process.env.AMPLITUDE_KEY,
+        respectDNT: true
+      }
     }
   ]
 }

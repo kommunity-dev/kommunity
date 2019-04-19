@@ -24,8 +24,8 @@ export const SubmitTemplate: React.SFC<{}> = () => {
           />
         </Link>
       </div>
-      <main className="regular-page container_md">
-        <h1>Send your resource</h1>
+      <main className="container_md">
+        <h1 id="submit-title">Send your resource</h1>
         <SubmitForm />
       </main>
     </>

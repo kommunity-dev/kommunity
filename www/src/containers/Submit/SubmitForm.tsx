@@ -1,22 +1,28 @@
 import {
+  contentFormats,
+  contentLevels,
+  contentTopics,
+  readableLevels
+} from '@kompanion/mock-data'
+import {
   ISubmissionPayload,
   TFormats,
   TSkillLevels,
   TTopics
 } from '@kompanion/types'
-import {
-  contentFormats,
-  contentLevels,
-  contentTopics
-} from '@kompanion/mock-data'
+import { capitalizeFirstLetter, scrollToId } from '@kompanion/utils'
 import * as React from 'react'
 import { useFormState } from 'react-use-form-state'
 
-import '../../components/styles/form.css'
-import { sendSubmission } from './submissionApi'
+import { formatIcons } from '../../components/formatIcons'
+import { skillLevelIcon } from '../../components/levelIcons'
 import SubmissionPlaceholder from './SubmissionPlaceholder'
 
+import '../../components/styles/card-checkbox.css'
+import '../../components/styles/form.css'
+
 const TITLE_MAX_LENGTH = 65
+const COMMENT_MAX_LENGTH = 240
 
 export interface ISubmissionFormFields {
   url: string
@@ -28,7 +34,7 @@ export interface ISubmissionFormFields {
   skillLevel?: TSkillLevels
 }
 
-const initialState: ISubmissionFormFields = {
+export const submissionInitialState: ISubmissionFormFields = {
   url: '',
   title: '',
   user: '',
@@ -39,7 +45,7 @@ export const SubmitForm: React.SFC<{}> = () => {
   // General form state
   const [state, { text, textarea, radio, label, url }] = useFormState<
     ISubmissionFormFields
-  >(initialState, {
+  >(submissionInitialState, {
     withIds: true
   })
 
@@ -63,15 +69,20 @@ export const SubmitForm: React.SFC<{}> = () => {
       ]
     }
     setSubmission(finalSubmission)
+    scrollToId('submit-title')
     setSubmitting(false)
   }
 
   // We want to update the disabled state and wording of the submission button
   // depending on the current state of the URL
   const hasUrl = state.validity.url && state.values.url !== ''
+  const isUrlInvalid = state.touched.url && !state.validity.url
 
   // Used by the title input to show how many characters are left
   const titleChars = TITLE_MAX_LENGTH - state.values.title.length
+
+  // Used by the comment input to show how many characters are left
+  const commentChars = COMMENT_MAX_LENGTH - state.values.comment.length
 
   const disableInputs = !hasUrl || isSubmitting
 
@@ -102,7 +113,18 @@ export const SubmitForm: React.SFC<{}> = () => {
         <fieldset disabled={isSubmitting} className="form__group">
           <div className="number-indicator">1</div>
           <label {...label('url')}>Resource URL / link</label>
-          <input {...url('url')} required={true} className="form__input" />
+          <input
+            {...url('url')}
+            required={true}
+            className={`form__input ${isUrlInvalid ? 'alert' : ''}`}
+          />
+          {isUrlInvalid && (
+            <div className="form__input-validation">
+              <span className="form__input-error">
+                Please provide a valid URL! (with the protocol)
+              </span>
+            </div>
+          )}
         </fieldset>
 
         <fieldset disabled={disableInputs} className="form__group">
@@ -115,11 +137,13 @@ export const SubmitForm: React.SFC<{}> = () => {
             className="form__input"
             placeholder="Try to be descriptive and to-the-point."
           />
-          {titleChars < 30 && (
-            <span>
+          <div className="form__input-validation">
+            <div
+              className={`form__input-info ${titleChars <= 5 ? 'alert' : ''}`}
+            >
               Characters left: <b>{titleChars}</b>
-            </span>
-          )}
+            </div>
+          </div>
         </fieldset>
         <fieldset disabled={disableInputs} className="form__group">
           <div className="number-indicator">3</div>
@@ -129,35 +153,49 @@ export const SubmitForm: React.SFC<{}> = () => {
             placeholder="Tell other developers why you think they should consume this resource ;)"
             {...textarea('comment')}
             required={true}
+            maxLength={COMMENT_MAX_LENGTH}
           />
+          <div className="form__input-validation">
+            <div
+              className={`form__input-info ${
+                commentChars <= 10 ? 'alert' : ''
+              }`}
+            >
+              Characters left: <b>{commentChars}</b>
+            </div>
+          </div>
         </fieldset>
-        <fieldset disabled={disableInputs} className="form__group">
+        <fieldset disabled={disableInputs} className="form__group full-width">
           <div className="number-indicator">4</div>
           <legend>What's the format of this content?</legend>
           {contentFormats.map(f => (
-            <div key={f}>
-              <label {...label('format', f)}>{f}</label>
-              <input {...radio('format', f)} />
+            <div className="card-checkbox" key={f}>
+              <input {...radio('format', f)} required={true} />
+              <label {...label('format', f)}>
+                <div>{formatIcons[f]({})}</div> {capitalizeFirstLetter(f)}
+              </label>
             </div>
           ))}
         </fieldset>
-        <fieldset disabled={disableInputs} className="form__group">
+        <fieldset disabled={disableInputs} className="form__group full-width">
           <div className="number-indicator">5</div>
           <legend>Who is it for?</legend>
           {contentLevels.map(l => (
-            <div key={l}>
-              <label {...label('skillLevel', l)}>{l}</label>
-              <input {...radio('skillLevel', l)} />
+            <div className="card-checkbox" key={l}>
+              <input {...radio('skillLevel', l)} required={true} />
+              <label {...label('skillLevel', l)}>
+                <div>{skillLevelIcon[l]()}</div> {readableLevels[l]}
+              </label>
             </div>
           ))}
         </fieldset>
-        <fieldset disabled={disableInputs} className="form__group">
+        <fieldset disabled={disableInputs} className="form__group full-width">
           <div className="number-indicator">6</div>
           <legend>Which topic does it fit in?</legend>
           {contentTopics.map(c => (
-            <div key={c}>
+            <div className="pill-checkbox" key={c}>
+              <input {...radio('topic', c)} required={true} />
               <label {...label('topic', c)}>{c}</label>
-              <input {...radio('topic', c)} />
             </div>
           ))}
         </fieldset>
@@ -168,8 +206,16 @@ export const SubmitForm: React.SFC<{}> = () => {
             className="form__input"
             {...textarea('user')}
             required={true}
-            placeholder="@yourNameHere"
+            placeholder="yourHandleHere"
+            pattern="[^\s@]*"
           />
+          {state.touched.user && !state.validity.user && (
+            <div className="form__input-validation">
+              <span className="form__input-error">
+                Please provide a valid GitHub handle (don't include @)
+              </span>
+            </div>
+          )}
         </fieldset>
         <button
           className="button button_primary"
