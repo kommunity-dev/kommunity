@@ -7,6 +7,7 @@ import { NavContext } from '../layouts/LayoutBasis'
 import { GithubIcon, TwitterIcon } from './socialIcons'
 
 import './styles/menu.css'
+import { BulbIcon } from './formatIcons'
 
 export const Menu: React.SFC<{}> = () => {
   const { toggleMenu, menuOpen, toggleSubscribe } = React.useContext(NavContext)
@@ -34,6 +35,9 @@ export const Menu: React.SFC<{}> = () => {
             </div>
             <Link to="/contributors" className="menu__link">
               <CollaboratorsIcon /> All contributors
+            </Link>
+            <Link to="/about" className="menu__link">
+              <BulbIcon /> About
             </Link>
           </div>
           <div className="menu__social-wrapper">

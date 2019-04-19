@@ -89,6 +89,7 @@ export const LayoutBasis: React.SFC<{}> = ({ children }) => {
     <>
       <Head>
         <link rel="icon" href={favicon} />
+        <meta name="robots" content="noindex nofollow" />
       </Head>
       {(navState.menuOpen || navState.filterOpen) && (
         <div

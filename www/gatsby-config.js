@@ -75,6 +75,7 @@ module.exports = {
         apiKey: process.env.AMPLITUDE_KEY,
         respectDNT: true
       }
-    }
+    },
+    `gatsby-plugin-netlify`
   ]
 }
