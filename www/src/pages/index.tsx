@@ -2,9 +2,9 @@ import { IContentCard } from '@kompanion/types'
 import { textToParagraphs } from '@kompanion/utils'
 import { graphql } from 'gatsby'
 import * as React from 'react'
-import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
+import PageMeta from '../components/PageMeta'
 import Directory from '../containers/Directory/Directory'
 
 export interface IIndexPageProps {
@@ -22,9 +22,10 @@ const firstParagraph = `Count on valuable, kommunity-curated content as your kom
 export const IndexPage: React.SFC<IIndexPageProps> = ({ data }) => {
   return (
     <>
-      <Helmet>
-        <title>kommunity - learning Gatsby can be fun and effective</title>
-      </Helmet>
+      <PageMeta
+        title="kommunity - collaboratively building the future of the web"
+        metaDescription="Stay up-to-date with quality, community-curated content on relevant topics for the future of web development"
+      />
       <Header includeFilter={true} />
       <Directory content={data.content.edges}>
         <div style={{ maxWidth: '560px', fontSize: '.9rem' }}>

@@ -103,7 +103,7 @@ export const LayoutBasis: React.SFC<{}> = ({ children }) => {
     if (hasPoppedUp === 'true' || feedbackGiven === 'true') {
       return
     } else {
-      const timeToPopUp = window.setTimeout(toggleFeedback, 3000)
+      const timeToPopUp = window.setTimeout(toggleFeedback, 300000)
       return () => {
         window.clearTimeout(timeToPopUp)
       }

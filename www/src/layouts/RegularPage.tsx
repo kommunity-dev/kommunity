@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Head from 'react-helmet'
 
 import Header from '../components/Header'
+import PageMeta from '../components/PageMeta'
 
 import './regular-page.css'
 
@@ -20,12 +20,7 @@ export const RegularPage: React.SFC<IRegularPage> = ({
   const { title, metaDescription } = pageContext.frontmatter
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        {metaDescription && (
-          <meta name="description" content={metaDescription} />
-        )}
-      </Head>
+      <PageMeta title={title} metaDescription={metaDescription} />
       <Header />
       <main className="regular-page">{children}</main>
     </>

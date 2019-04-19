@@ -2,10 +2,10 @@ import { IContentCard } from '@kompanion/types'
 import { textToParagraphs } from '@kompanion/utils'
 import { graphql } from 'gatsby'
 import * as React from 'react'
-import Helmet from 'react-helmet'
 
 import ContentCard from '../components/ContentCard'
 import Header from '../components/Header'
+import PageMeta from '../components/PageMeta'
 import { GithubIcon } from '../components/socialIcons'
 
 import './contributor-template.css'
@@ -27,23 +27,24 @@ export interface IContributorTemplateProps {
 export const ContributorTemplate: React.SFC<IContributorTemplateProps> = ({
   data: { contributor: contributor }
 }) => {
-  const {
-    handle,
-    fields: { name = handle, bio, avatar240, suggestions }
-  } = contributor
+  const { handle } = contributor
+  const { name = handle, bio, avatar240, suggestions } = contributor.fields
+  const lastName = name.split(' ')[1] || undefined
   return (
     <>
-      <Helmet>
-        <title>
-          {name} ({handle}) on kommunity
-        </title>
-        <meta
-          name="description"
-          content={`${name} has ${
-            suggestions.length
-          } suggestions on kommunity, check all of them out 😉`}
-        />
-      </Helmet>
+      <PageMeta
+        title={`${name} (${handle}) on kommunity`}
+        metaDescription={`${name} has ${
+          suggestions.length
+        } suggestions on kommunity, check all of them out 😉`}
+        ogType="profile"
+        ogImage={avatar240}
+      >
+        <meta property="profile:first_name" content={name.split(' ')[0]} />
+        {lastName && <meta property="profile:last_name" content={lastName} />}
+        <meta property="profile:username" content={handle} />
+        <meta property="twitter:creator" content={`@${handle}`} />
+      </PageMeta>
       <Header />
       <main className="contributor-template">
         <header>

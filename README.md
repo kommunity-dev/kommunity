@@ -6,14 +6,10 @@
 
 - **more** (_and more relavant_) **content**
 - "via twitter" in ContentCard for influencers
-- Meta tags for SEO and social sharing
-  - especially cards for twitter!
 
 ### Nice to have
 
 - modal with other recommendations
-- Room for feedback
-- about page
 - Tooltips for skill levels
 - Tooltips for the format in the content card
 - masonry layout for the content
@@ -25,12 +21,11 @@
   - it'd probably skyrocket build times, wouldn't it?
   - Consider adding `meta og:image` with images dynamically-generated from the content for better sharing -> a service that does this is https://www.url2png.com/
 - Schema JSONLD for better SEO and content linkability
+  - Maybe add in the `PageMeta` component
 - Consider tapping into web mentions?
   - I honestly have no clue if this is valid
 
 ### Needs re-structuring
 
 - Consider CSS modules for certain parts of the app
-- Reinforce a consistent name for collaborator / contributor / user
-- Reinforce a consistent name for collaborator / contributor / user
-- Put kommunity in its own repository
+- Refactor the CSS spaghetti I made when I was anxiously rushing the build process 😅

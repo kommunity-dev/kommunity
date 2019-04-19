@@ -1,8 +1,8 @@
 import { Link } from 'gatsby'
 import * as React from 'react'
-import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
+import PageMeta from '../components/PageMeta'
 
 import './all-contributors.css'
 
@@ -27,13 +27,10 @@ export const AllContributorsTemplate: React.SFC<
   const { length: count } = contributors
   return (
     <>
-      <Helmet>
-        <title>kommunity contributors</title>
-        <meta
-          name="description"
-          content={`Meet the ${count} people who make it possible`}
-        />
-      </Helmet>
+      <PageMeta
+        title="kommunity contributors"
+        metaDescription={`Meet the ${count} people who make it possible`}
+      />
       <Header />
       <main className="all-contributors">
         <h1>All contributors</h1>
