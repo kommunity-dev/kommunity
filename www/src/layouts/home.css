@@ -1,0 +1,17 @@
+.home__intro {
+  display: flex;
+  align-items: center;
+  max-width: 560px;
+  margin: calc(var(--multiplier) * 12) 0;
+  & h1 {
+    font-size: calc(var(--multiplier) * 10);
+  }
+  & p {
+    font-size: calc(var(--multiplier) * 7);
+    margin: 0;
+  }
+  & svg {
+    flex: 0 0 60px;
+    margin-right: calc(var(--multiplier) * 10);
+  }
+}

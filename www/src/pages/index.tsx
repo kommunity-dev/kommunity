@@ -1,11 +1,13 @@
 import { IContentCard } from '@kompanion/types'
-import { textToParagraphs } from '@kompanion/utils'
 import { graphql } from 'gatsby'
 import * as React from 'react'
 
+import GatsbyIcon from '../components/GatsbyIcon';
 import Header from '../components/Header'
 import PageMeta from '../components/PageMeta'
 import Directory from '../containers/Directory/Directory'
+
+import '../layouts/home.css'
 
 export interface IIndexPageProps {
   data: {
@@ -17,8 +19,6 @@ export interface IIndexPageProps {
   }
 }
 
-const firstParagraph = `Count on valuable, kommunity-curated content as your kompanion in **creating the web of the future**.\n__Why count on old fashioned link aggregators when you have recommendations by your fellow developers?__ 😉`
-
 export const IndexPage: React.SFC<IIndexPageProps> = ({ data }) => {
   return (
     <>
@@ -28,8 +28,12 @@ export const IndexPage: React.SFC<IIndexPageProps> = ({ data }) => {
       />
       <Header includeFilter={true} />
       <Directory content={data.content.edges}>
-        <div style={{ maxWidth: '560px', fontSize: '.9rem' }}>
-          {textToParagraphs(firstParagraph)}
+        <div className="home__intro">
+          <GatsbyIcon />
+          <div>
+            <h1>kommunity-curated content on GatsbyJS</h1>
+            <p>Why count on old fashioned link aggregators when you have recommendations by your fellow developers? 😉</p>
+          </div>
         </div>
       </Directory>
     </>

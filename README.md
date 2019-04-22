@@ -1,14 +1,20 @@
 # kompanion's website
 
+Why count on old fashioned link aggregators when you have recommendations by your fellow developers? 😉
+
+kommunity.dev aims to ease your way into learning / getting deeper into GatsbyJS and React by gathering content recommendations from fellow developers. It's still a project in its infancy that you can help shape by contributing with code, ideas and content, it's open for everyone 🌟
+
+## Contributing
+
+See [kommunity's contribution page](https://kommunity.dev/contributing) for more info ;)
+
 ## TODOS
 
-### Must have
-
 - **more** (_and more relavant_) **content**
-- "via twitter" in ContentCard for influencers
 
 ### Nice to have
 
+- [Automatic content submission](https://github.com/kompanion/kommunity/issues/1)
 - modal with other recommendations
 - Tooltips for skill levels
 - Tooltips for the format in the content card

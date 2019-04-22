@@ -40,7 +40,8 @@
   padding: var(--headerPadding);
   transition: var(--transition);
   & svg {
-    width: 1.5rem;
+    width: 1.35rem;
+    fill: var(--purpleL1);
   }
   &.disabled {
     width: 0;
@@ -57,8 +58,9 @@
     color: var(--greyD2);
   }
   & svg {
-    vertical-align: middle;
+    vertical-align: baseline;
     width: 1.25em;
+    margin-bottom: -.1em;
   }
   & span > i {
     font-size: .75em;

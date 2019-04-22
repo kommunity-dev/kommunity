@@ -61,8 +61,8 @@ export const Menu: React.SFC<{}> = () => {
               <MailIcon />{' '}
             </a>
           </div>
-          <p style={{ marginBottom: '1rem', fontSize: '.9em' }}>
-            Made with 💜 by{' '}
+          <p style={{ marginBottom: '1rem', fontSize: '.9em', textAlign: 'center' }}>
+            Made with 💙 by{' '}
             <a href="https://kaordica.design" target="_blank" rel="noopener">
               Kaordica
             </a>{' '}

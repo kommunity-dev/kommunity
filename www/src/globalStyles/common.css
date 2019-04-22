@@ -84,6 +84,7 @@ blockquote {
   line-height: 1.7;
   padding-left: .5rem;
   border-left: 4px solid var(--purple);
+  opacity: .9;
 }
 
 ul {

@@ -23,11 +23,13 @@ export const Header: React.SFC<IHeaderProps> = ({
   const ctx = React.useContext(NavContext)
   return (
     <header className="header">
-      {!ctx.filterOpen && includeFilter && (
+      {includeFilter && (
         <button
-          className="header__sidebar-button"
+          className={`header__sidebar-button ${
+            !ctx.filterOpen ? '' : 'disabled'
+          }`}
           onClick={ctx.toggleFilters}
-          title="Button to open the search filters"
+          title="Open the search filters"
         >
           <FilterIcon />
         </button>
@@ -70,7 +72,7 @@ export const Header: React.SFC<IHeaderProps> = ({
           }`}
           disabled={ctx.menuOpen}
           onClick={ctx.toggleMenu}
-          title="Button to open the menu"
+          title="Open the menu"
         >
           <MenuIcon />
         </button>

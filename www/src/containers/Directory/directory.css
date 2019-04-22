@@ -1,5 +1,7 @@
 .directory__main {
   padding: 0 .75rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .directory__empty-search {
