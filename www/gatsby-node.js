@@ -112,10 +112,13 @@ exports.onCreateNode = async ({ node, actions, getNodes, ...rest }) => {
         id: name,
         contributors___NODE: contributorsNodes,
         ...content,
-        recommendations: content.recommendations.map(({ comment, user }) => ({
-          user___NODE: `kommContributor-${user}`,
-          comment
-        })),
+        recommendations: content.recommendations.map(
+          ({ comment, user, twitterUrl }) => ({
+            user___NODE: `kommContributor-${user}`,
+            comment,
+            twitterUrl
+          })
+        ),
         parent: null,
         internal: {
           mediaType: 'application/json',

@@ -31,7 +31,7 @@ export const SubmissionPlaceholder: React.SFC<
         Automatically submitting you content still isn't available! Setting up
         the lambda function to do so has proven to be quite the challenge, which{' '}
         <a
-          href="https://github.com/kompanion/kompanion"
+          href="https://github.com/kompanion/kommunity/issues/1"
           target="_blank"
           rel="noopener"
         >

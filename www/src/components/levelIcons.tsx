@@ -2,7 +2,6 @@ import { TSkillLevels } from '@kompanion/types'
 import { readableLevels } from '@kompanion/mock-data'
 import * as React from 'react'
 
-
 import './styles/skill-level.css'
 
 export const WinkEmoji = () => (

@@ -12,7 +12,7 @@
     padding: 1.5rem 0;
     border-top: 1px solid var(--greyL1);
     & h2 {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
   }
 }
@@ -20,15 +20,15 @@
 .all-contributors__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 140px));
-  grid-gap: .5rem;
+  grid-gap: 0.5rem;
   justify-content: center;
 }
 
 .contributor-card {
   background: white;
   box-shadow: var(--shadow3);
-  border-radius: .5rem;
-  padding: 1rem .5rem;
+  border-radius: 0.5rem;
+  padding: 1rem 0.5rem;
   & img {
     border-radius: 50%;
     width: 90px;
@@ -39,6 +39,7 @@
     color: var(--purple);
     font-weight: 700;
     font-size: calc(var(--multiplier) * 8);
+    word-wrap: break-word;
   }
   & p {
     margin: 0;
@@ -49,12 +50,12 @@
 
 @media (--tabletUp) {
   .contributor-card {
-    padding: 1.25rem;
+    padding: 1.25rem 0.5rem;
     & h2 {
-      font-size: calc(var(--multiplier) * 10);
+      font-size: calc(var(--multiplier) * 9);
     }
     & p {
-      font-size: calc(var(--multiplier) * 9);
+      font-size: calc(var(--multiplier) * 8);
     }
     & img {
       width: 100px;
@@ -63,6 +64,6 @@
   }
   .all-contributors__container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 175px));
-    grid-gap: .75rem;
+    grid-gap: 0.75rem;
   }
 }

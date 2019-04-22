@@ -33,12 +33,12 @@
   border-radius: 10em;
   display: inline-block;
   font-weight: 700;
-  padding: 0 .75em;
+  padding: 0 0.75em;
 }
 
 .content__title {
   text-decoration: none;
-  color: var(--greyD3)
+  color: var(--greyD3);
 }
 
 .content__domain {
@@ -47,7 +47,7 @@
     fill: var(--grey);
     height: 1.5em;
     vertical-align: sub;
-    margin-right: .35em;
+    margin-right: 0.35em;
   }
   & a {
     color: inherit;
@@ -58,8 +58,8 @@
 
 .content__quote {
   position: absolute;
-  right: .5em;
-  top: -.5em;
+  right: 0.5em;
+  top: -0.5em;
   z-index: -1;
   & svg {
     width: 2.25em;
@@ -80,5 +80,11 @@
   object-fit: cover;
   border-radius: 50%;
   vertical-align: middle;
-  margin-right: .5em;
+  margin-right: 0.5em;
+}
+
+.content__via-twitter {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: var(--greyD1);
 }

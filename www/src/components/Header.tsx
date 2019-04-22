@@ -36,7 +36,7 @@ export const Header: React.SFC<IHeaderProps> = ({
         <Link to="/" className="header__home">
           <Favicon />{' '}
           <span>
-            kommunity <i>v0.1</i>
+            kommunity.dev <i>v0.1</i>
           </span>
         </Link>
         {/* TODO: TEXT SEARCH HERE */}

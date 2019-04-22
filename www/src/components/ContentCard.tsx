@@ -54,7 +54,17 @@ export const ContentCard: React.SFC<IContentCard> = ({
             alt={`Profile picture from ${name}`}
             className="content__photo"
           />
-          {name}
+          {name}{' '}
+          {collaborator.twitterUrl && (
+            <a
+              className="content__via-twitter"
+              href={collaborator.twitterUrl}
+              target="_blank"
+              rel="noopener"
+            >
+              - via Twitter
+            </a>
+          )}
         </a>
       </address>
       {length > 1 && (
