@@ -10,5 +10,4 @@ yarn-error.log*
 .env.development
 .env.production
 
-tweets
-fetchTwitterProfile.js
+twitter-curation

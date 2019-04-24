@@ -24,7 +24,9 @@
     "gatsby-plugin-netlify": "^2.0.14",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.2",
     "gatsby-plugin-amplitude-analytics": "^1.5.0",
+    "gatsby-source-filesystem": "^2.0.31",
     "gatsby-theme-koncrete": "*",
+    "gatsby-transformer-json": "^2.1.11",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-use-form-state": "^0.9.0"

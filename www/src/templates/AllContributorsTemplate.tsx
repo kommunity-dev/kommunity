@@ -33,8 +33,8 @@ export const AllContributorsTemplate: React.SFC<
       />
       <Header />
       <main className="all-contributors">
-        <h1>All contributors</h1>
-        <p>Thank you all that make Kommunity possible!</p>
+        <h1>All kontributors</h1>
+        <p>Thank you all that make kommunity.dev possible!</p>
         <section className="all-contributors__container">
           {contributors.map(({ node: { handle, fields } }) => (
             <div className="contributor-card" key={handle}>

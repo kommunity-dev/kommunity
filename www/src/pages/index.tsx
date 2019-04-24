@@ -2,7 +2,7 @@ import { IContentCard } from '@kompanion/types'
 import { graphql } from 'gatsby'
 import * as React from 'react'
 
-import GatsbyIcon from '../components/GatsbyIcon';
+import GatsbyIcon from '../components/GatsbyIcon'
 import Header from '../components/Header'
 import PageMeta from '../components/PageMeta'
 import Directory from '../containers/Directory/Directory'
@@ -32,7 +32,10 @@ export const IndexPage: React.SFC<IIndexPageProps> = ({ data }) => {
           <GatsbyIcon />
           <div>
             <h1>kommunity-curated content on GatsbyJS</h1>
-            <p>Why count on old fashioned link aggregators when you have recommendations by your fellow developers? 😉</p>
+            <p>
+              Why count on old fashioned link aggregators when you have
+              recommendations by your fellow developers? 😉
+            </p>
           </div>
         </div>
       </Directory>
@@ -46,7 +49,9 @@ export default IndexPage
 
 export const pageQuery = graphql`
   {
-    content: allKommunityContent {
+    content: allKommunityContent(
+      sort: { fields: [lastUpdated, contributorCount], order: DESC }
+    ) {
       edges {
         node {
           title

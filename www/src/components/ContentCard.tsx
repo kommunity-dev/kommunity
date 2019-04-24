@@ -70,10 +70,7 @@ export const ContentCard: React.SFC<IContentCard> = ({
       {length > 1 && (
         <footer>
           <span className="content__recommended-by">
-            Recommended by
-            {length === 1
-              ? recommendations[0].user.fields.name
-              : `${length} people`}
+            Recommended by <b>{length}</b> other people
           </span>
         </footer>
       )}

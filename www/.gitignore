@@ -13,3 +13,7 @@ yarn-error.log*
 # Gatsby-specific
 .cache/
 public/
+
+# Misc
+
+kommunity-content

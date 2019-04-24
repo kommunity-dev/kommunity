@@ -1,10 +1,8 @@
 const path = require('path')
-const axios = require('axios')
-const crypto = require('crypto')
 
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
-})
+const createContributorNode = require('./nodeHelpers/createContributorNode')
+const createLocalNodes = require('./nodeHelpers/createLocalNodes.js')
+const createNodes = require('./nodeHelpers/createContentNodes')
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   try {
@@ -52,152 +50,23 @@ exports.onCreateNode = async ({ node, actions, getNodes, ...rest }) => {
     handle
   } = node
 
+  // If we're developing with a local copy of the kommunity-content repo, the process of creating content nodes is a bit different
+  if (type === 'ContentJson') {
+    createLocalNodes({ node, createNode })
+  }
+
   // Parsing the Github repository and creating nodes for suggestions and contributors
-  if (
+  else if (
     type === 'GithubRepository' &&
     name === 'kommunity-content' &&
     files &&
     Array.isArray(files.entries)
   ) {
-    console.time('\n====================\nCreating nodes')
-    const { entries } = files
+    createNodes({ files, createNode, createNodeField })
+  }
 
-    for (const entry of entries) {
-      const { object, name } = entry
-      if (
-        typeof name !== 'string' ||
-        !object ||
-        typeof object.text !== 'string'
-      ) {
-        continue
-      }
-
-      const content = JSON.parse(object.text)
-      // TODO: better type checking for the content object
-      // category, format and skillLevel are all necessary
-      if (
-        !content ||
-        typeof content.title !== 'string' ||
-        typeof content.url !== 'string' ||
-        !Array.isArray(content.recommendations)
-      ) {
-        continue
-      }
-
-      const contributors = content.recommendations.map(r => r.user)
-
-      for (const c of contributors) {
-        if (typeof c !== 'string') {
-          continue
-        }
-
-        createNode({
-          id: `kommContributor-${c}`,
-          handle: c,
-          parent: null,
-          children: [],
-          internal: {
-            type: 'KommunityContributor',
-            contentDigest: crypto
-              .createHash(`md5`)
-              .update(c)
-              .digest(`hex`)
-          }
-        })
-      }
-
-      const contributorsNodes = contributors.map(c => `kommContributor-${c}`)
-
-      createNode({
-        id: name,
-        contributors___NODE: contributorsNodes,
-        ...content,
-        recommendations: content.recommendations.map(
-          ({ comment, user, twitterUrl }) => ({
-            user___NODE: `kommContributor-${user}`,
-            comment,
-            twitterUrl
-          })
-        ),
-        parent: null,
-        internal: {
-          mediaType: 'application/json',
-          type: 'KommunityContent',
-          contentDigest: crypto
-            .createHash(`md5`)
-            .update(object.text)
-            .digest(`hex`),
-          content: object.text,
-          description: `Kommunity content node: ${content.title}`
-        }
-      })
-    }
-    console.timeEnd('\n====================\nCreating nodes')
-  } else if (type === 'KommunityContributor') {
-    // console.log(Object.keys(rest), rest.getNode)
-    console.time(`\n===============\nFetching ${handle}`)
-    const query = `
-      query {
-        user(login: "${handle}") {
-          avatar32: avatarUrl(size: 32)
-          avatar100: avatarUrl(size: 100)
-          avatar240: avatarUrl(size: 240)
-          name
-          bio
-        }
-      }
-    `
-
-    // Get the contributor's name and image from GitHub
-    try {
-      const ghRes = await axios.post(
-        'https://api.github.com/graphql',
-        { query },
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.GH_ACCESS_TOKEN}`
-          }
-        }
-      )
-      const { data } = ghRes
-      if (data.data && data.data.user) {
-        for (const key of Object.keys(data.data.user)) {
-          createNodeField({
-            node,
-            name: key,
-            value: data.data.user[key]
-          })
-        }
-      }
-    } catch (error) {
-      console.info(`Couldn't fetch @${handle}'s GH profile`)
-      console.error(error)
-    }
-
-    // Add all the suggestions submitted by the user to their node
-    try {
-      const allNodes = await getNodes()
-      const suggestionsIds = allNodes
-        .filter(
-          ({ internal, contributors___NODE }) =>
-            internal.type === 'KommunityContent' &&
-            contributors___NODE.indexOf(node.id) >= 0
-        )
-        .map(({ id }) => id)
-      createNodeField({
-        node,
-        name: 'suggestions___NODE',
-        value: suggestionsIds
-      })
-      createNodeField({
-        node,
-        name: 'suggestionsCount',
-        value: suggestionsIds.length
-      })
-    } catch (error) {
-      console.info(`Couldn't get @${handle}'s suggestions`)
-      console.error(error)
-    }
-    console.timeEnd(`\n===============\nFetching ${handle}`)
+  // Finally, getting further data on each contributor
+  else if (type === 'KommunityContributor') {
+    await createContributorNode({ node, handle, createNodeField, getNodes })
   }
 }

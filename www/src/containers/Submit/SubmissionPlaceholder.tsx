@@ -59,7 +59,7 @@ export const SubmissionPlaceholder: React.SFC<
       </p>
       <p style={{ maxWidth: 'none' }}>
         <span className="number-indicator">3</span> paste the JSON in the body
-        and name the file <code>{slugifyString(submittedUrl)}</code>
+        and name the file <code>{slugifyString(submittedUrl)}.json</code>
       </p>
       <p>
         <span className="number-indicator">4</span> name your commit{' '}

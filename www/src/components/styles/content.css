@@ -27,6 +27,9 @@
   & address {
     margin-bottom: calc(var(--multiplier) * 2);
   }
+  & footer {
+    margin-top: calc(var(--multiplier) * 6);
+  }
 }
 
 .content__meta {
@@ -99,4 +102,9 @@
   font-size: 0.9em;
   font-weight: 400;
   color: var(--greyD1);
+}
+
+.content__recommended-by {
+  color: var(--greyD1);
+  font-size: calc(var(--multiplier) * 7);
 }
