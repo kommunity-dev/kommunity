@@ -180,6 +180,18 @@ export const SubmitForm: React.SFC<{}> = () => {
         <fieldset disabled={disableInputs} className="form__group full-width">
           <div className="number-indicator">5</div>
           <legend>Who is it for?</legend>
+          <p style={{ marginTop: 0 }}>
+            The exact differentiation of each level is still pending... Feel
+            free to{' '}
+            <a
+              href="https://github.com/kompanion/kommunity/issues/2"
+              target="_blank"
+              rel="noopener"
+            >
+              contribute to the skill level discussion
+            </a>{' '}
+            on Github!
+          </p>
           {contentLevels.map(l => (
             <div className="card-checkbox" key={l}>
               <input {...radio('skillLevel', l)} required={true} />
@@ -192,6 +204,18 @@ export const SubmitForm: React.SFC<{}> = () => {
         <fieldset disabled={disableInputs} className="form__group full-width">
           <div className="number-indicator">6</div>
           <legend>Which topic does it fit in?</legend>
+          <p style={{ marginTop: 0 }}>
+            If your topic isn't here, just send it to "Unsorted". We're still
+            dicussing on{' '}
+            <a
+              href="https://github.com/kompanion/kommunity/issues/2"
+              target="_blank"
+              rel="noopener"
+            >
+              which topics should we focus on
+            </a>
+            , please join us if you have a topic in mind 😄
+          </p>
           {contentTopics.map(c => (
             <div className="pill-checkbox" key={c}>
               <input {...radio('topic', c)} required={true} />

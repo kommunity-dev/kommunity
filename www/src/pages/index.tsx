@@ -23,7 +23,7 @@ export const IndexPage: React.SFC<IIndexPageProps> = ({ data }) => {
   return (
     <>
       <PageMeta
-        title="kommunity - collaboratively building the future of the web"
+        title="kommunity - collaboratively learn Gatsby, React and Serverless"
         metaDescription="Stay up-to-date with quality, community-curated content on relevant topics for the future of web development"
       />
       <Header includeFilter={true} />

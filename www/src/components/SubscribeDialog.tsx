@@ -1,4 +1,4 @@
-import { contentTopics } from '@kompanion/mock-data'
+import { prospectiveTopics } from '@kompanion/mock-data'
 import { TTopics } from '@kompanion/types'
 import {
   Dialog
@@ -113,7 +113,7 @@ export const SubscribeDialog: React.SFC<ISubscribeDialogProps> = ({
                   Choose one or more topics
                 </p>
                 <section className="pill-checkbox__wrapper">
-                  {contentTopics.map(t => (
+                  {prospectiveTopics.map(t => (
                     <div key={t} className="pill-checkbox">
                       <input {...checkbox('subscriptionTopics', t)} />
                       <label {...label('subscriptionTopics', t)}>{t}</label>
