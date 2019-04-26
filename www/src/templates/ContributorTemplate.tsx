@@ -18,24 +18,26 @@ export interface IContributorTemplateProps {
         avatar240?: string
         name?: string
         bio?: string
-        suggestions: IContentCard[]
       }
+    }
+    suggestions: {
+      edges: Array<{ node: IContentCard }>
     }
   }
 }
 
 export const ContributorTemplate: React.SFC<IContributorTemplateProps> = ({
-  data: { contributor: contributor }
+  data: { contributor, suggestions }
 }) => {
   const { handle } = contributor
-  const { name = handle, bio, avatar240, suggestions } = contributor.fields
+  const { name = handle, bio, avatar240 } = contributor.fields
   const lastName = name.split(' ')[1] || undefined
   return (
     <>
       <PageMeta
         title={`${name} (${handle}) on kommunity`}
         metaDescription={`${name} has ${
-          suggestions.length
+          suggestions.edges.length
         } suggestions on kommunity, check all of them out 😉`}
         ogType="profile"
         ogImage={avatar240}
@@ -65,13 +67,31 @@ export const ContributorTemplate: React.SFC<IContributorTemplateProps> = ({
           {bio && textToParagraphs(bio)}
         </header>
         <section className="contributor__suggestions">
-          <h2>Submitted by {name.split(' ')[0]}</h2>
+          <h2>Suggestions by {name.split(' ')[0]}</h2>
           <div className="content__wrapper">
-            {suggestions.map(s => (
-              <ContentCard key={s.url} {...s} />
+            {suggestions.edges.map(({ node }) => (
+              <ContentCard highlightedUser={handle} key={node.url} {...node} />
             ))}
           </div>
         </section>
+        <footer>
+          <p>
+            <b>Note to {name.split(' ')[0]}:</b> kommunity.dev is free and
+            open-source and pulled your content from Twitter to make the
+            directory more relevant for other devs. If you'd like to remove your
+            name from the site, please{' '}
+            <a href="mailto:hello@kommunity.dev">shoot us an email</a> or
+            message us{' '}
+            <a
+              href="https://twitter.com/kommunityDev"
+              target="_blank"
+              rel="noopener"
+            >
+              on Twitter
+            </a>
+            , and sorry for the inconvenience!
+          </p>
+        </footer>
       </main>
     </>
   )
@@ -82,14 +102,21 @@ ContributorTemplate.displayName = 'UserTemplate'
 export default ContributorTemplate
 
 export const pageQuery = graphql`
-  query ContributorPageQuery($id: String!) {
-    contributor: kommunityContributor(id: { eq: $id }) {
+  query ContributorPageQuery($handle: String!) {
+    contributor: kommunityContributor(handle: { eq: $handle }) {
       handle
       fields {
         avatar240
         name
         bio
-        suggestions {
+      }
+    }
+    suggestions: allKommunityContent(
+      filter: { contributors: { elemMatch: { handle: { eq: $handle } } } }
+      sort: { fields: [lastUpdated, contributorCount], order: DESC }
+    ) {
+      edges {
+        node {
           title
           topic
           skillLevel
@@ -104,6 +131,7 @@ export const pageQuery = graphql`
               }
             }
             comment
+            twitterUrl
           }
         }
       }

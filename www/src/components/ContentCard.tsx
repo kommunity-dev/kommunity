@@ -9,16 +9,25 @@ import { SkillLevelIndicator } from './levelIcons'
 
 import './styles/content.css'
 
-export const ContentCard: React.SFC<IContentCard> = ({
+export interface IContentCardProps extends IContentCard {
+  highlightedUser?: string
+}
+
+export const ContentCard: React.SFC<IContentCardProps> = ({
   title,
   recommendations,
   topic,
   url,
   format,
-  skillLevel
+  skillLevel,
+  highlightedUser
 }) => {
   const { length } = recommendations
-  const collaborator = recommendations[0]
+  const collaborator =
+    typeof highlightedUser === 'string'
+      ? recommendations.find(r => r.user.handle === highlightedUser) ||
+        recommendations[0]
+      : recommendations[0]
   const {
     handle,
     fields: { name, avatar32: avatarUrl }
@@ -70,7 +79,8 @@ export const ContentCard: React.SFC<IContentCard> = ({
       {length > 1 && (
         <footer>
           <span className="content__recommended-by">
-            Recommended by <b>{length}</b> other people
+            Recommended by <b>{length - 1}</b> other{' '}
+            {length - 1 === 1 ? 'person' : 'people'}
           </span>
         </footer>
       )}

@@ -3,8 +3,14 @@
   max-width: 1240px;
   margin: 4rem auto;
   padding: 0 1rem;
-  & h1 + p {
-    margin: 0 0 4rem;
+  & header p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 650px;
+    font-size: 0.9rem;
+    &:first-of-type {
+      margin-top: 0;
+    }
   }
   & aside {
     max-width: 750px;
@@ -29,6 +35,7 @@
   box-shadow: var(--shadow3);
   border-radius: 0.5rem;
   padding: 1rem 0.5rem;
+  font-size: calc(var(--multiplier) * 7);
   & img {
     border-radius: 50%;
     width: 90px;
@@ -38,12 +45,12 @@
   & h2 {
     color: var(--purple);
     font-weight: 700;
-    font-size: calc(var(--multiplier) * 8);
+    font-size: inherit;
     word-wrap: break-word;
   }
   & p {
     margin: 0;
-    font-size: calc(var(--multiplier) * 7);
+    font-size: inherit;
     color: var(--greyD2);
   }
 }
@@ -51,12 +58,7 @@
 @media (--tabletUp) {
   .contributor-card {
     padding: 1.25rem 0.5rem;
-    & h2 {
-      font-size: calc(var(--multiplier) * 9);
-    }
-    & p {
-      font-size: calc(var(--multiplier) * 8);
-    }
+    font-size: calc(var(--multiplier) * 8);
     & img {
       width: 100px;
       height: 100px;

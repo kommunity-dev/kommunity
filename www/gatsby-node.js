@@ -31,7 +31,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
         path: `/contributors/${node.handle}`,
         component: path.resolve('./src/templates/ContributorTemplate.tsx'),
         context: {
-          id: node.id
+          handle: node.handle
         }
       })
     }

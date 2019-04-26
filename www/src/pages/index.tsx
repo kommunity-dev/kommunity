@@ -31,7 +31,7 @@ export const IndexPage: React.SFC<IIndexPageProps> = ({ data }) => {
         <div className="home__intro">
           <GatsbyIcon />
           <div>
-            <h1>kommunity-curated content on GatsbyJS</h1>
+            <h1>kommunity-curated content on GatsbyJS and React</h1>
             <p>
               Why count on old fashioned link aggregators when you have
               recommendations by your fellow developers? 😉
@@ -50,7 +50,7 @@ export default IndexPage
 export const pageQuery = graphql`
   {
     content: allKommunityContent(
-      sort: { fields: [lastUpdated, contributorCount], order: DESC }
+      sort: { fields: [lastUpdated, contributorCount], order: [DESC, DESC] }
     ) {
       edges {
         node {

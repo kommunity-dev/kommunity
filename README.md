@@ -1,37 +1,27 @@
-# kompanion's website
+<h1 style="text-align:center">kompanion.dev</h1>
+
+<h2 style="text-align:center">kommunity-curated content on GatsbyJS and React ✨</h2>
+
+---
 
 Why count on old fashioned link aggregators when you have recommendations by your fellow developers? 😉
 
-kommunity.dev aims to ease your way into learning / getting deeper into GatsbyJS and React by gathering content recommendations from fellow developers. It's still a project in its infancy that you can help shape by contributing with code, ideas and content, it's open for everyone 🌟
+kommunity.dev aims to ease your way into learning / getting deeper into GatsbyJS and React by gathering content recommendations from fellow developers. It's still a project in its infancy that you can help shape by contributing with code, ideas and content. **It's open for everyone 🌟**
 
 ## Contributing
 
 See [kommunity's contribution page](https://kommunity.dev/contributing) for more info ;)
 
-## TODOS
+## Infrastructure
 
-- **more** (_and more relavant_) **content**
+- Content is hosted in the [`kompanion/kommunity-content`](https://github.com/kompanion/kommunity-content) repository
+- [Gatsby](https://gatsbyjs.org) generates the app based on [React](https://reactjs.org) components
+- Components are written in [Typescript](https://www.typescriptlang.org/)
+  - code linted [tslint](https://palantir.github.io/tslint/) with [StandardJS](https://standardjs.com/) style
+  - and formatted with [Prettier](https://prettier.io/)
+- For the styles, kommunity.dev currently uses plain `.css` files
+  - [PostCSS](https://postcss.org) transforms the CSS to support older browsers
+  - and style is ~poorly~ linted by [stylelint](https://stylelint.io/) (it's not set-up properly yet, so it's not taking much effect)
+- This repo uses `yarn workspaces` as, in the future, it'll also be home to serverless functions that will allow for more advanced features 🤗
 
-### Nice to have
-
-- [Automatic content submission](https://github.com/kompanion/kommunity/issues/1)
-- modal with other recommendations
-- Tooltips for skill levels
-- Tooltips for the format in the content card
-- masonry layout for the content
-- filter for the topic when clicking on its tag inside a content card
-- Accesible sidebars
-- Each content having its own page
-  - could help with sharing -> MUST VALIDATE -> won't people be more prone to share the actual link?
-  - could help with SEO -> I'm not sure this is the case, but it's worth to take a look
-  - it'd probably skyrocket build times, wouldn't it?
-  - Consider adding `meta og:image` with images dynamically-generated from the content for better sharing -> a service that does this is https://www.url2png.com/
-- Schema JSONLD for better SEO and content linkability
-  - Maybe add in the `PageMeta` component
-- Consider tapping into web mentions?
-  - I honestly have no clue if this is valid
-
-### Needs re-structuring
-
-- Consider CSS modules for certain parts of the app
-- Refactor the CSS spaghetti I made when I was anxiously rushing the build process 😅
+Feel free to create an issue or PR with suggested changes to the architecture and code!

@@ -1,7 +1,7 @@
 .home__intro {
   display: flex;
   align-items: center;
-  max-width: 560px;
+  max-width: 650px;
   margin: calc(var(--multiplier) * 12) 0;
   & h1 {
     font-size: calc(var(--multiplier) * 10);
@@ -9,6 +9,7 @@
   & p {
     font-size: calc(var(--multiplier) * 7);
     margin: 0;
+    max-width: 450px;
   }
   & svg {
     flex: 0 0 60px;

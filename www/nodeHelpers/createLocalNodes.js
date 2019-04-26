@@ -3,7 +3,6 @@ const crypto = require('crypto')
 module.exports = ({ node, createNode }) => {
   const contributors = node.recommendations.map(r => r.user)
   for (const c of contributors) {
-    console.log(c)
     createNode({
       id: `kommContributor-${c}`,
       handle: c,

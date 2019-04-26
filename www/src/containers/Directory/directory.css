@@ -1,5 +1,5 @@
 .directory__main {
-  padding: 0 .75rem;
+  padding: 0 0.75rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -12,7 +12,7 @@
     width: 120px;
   }
 }
-  
+
 .directory__sidebar {
   left: 0;
   transform: translateX(-120%);
@@ -22,12 +22,18 @@
     color: var(--greyD2);
   }
   &::-webkit-scrollbar {
-    width: .5rem;
+    width: 0.5rem;
   }
 }
 
 @media (--largeUp) {
   .directory__main {
-    padding: .5rem 1.5rem .5rem 1.5rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  }
+}
+
+@media (--laptopUp) {
+  .directory__main {
+    max-width: calc(900px + 20vw);
   }
 }

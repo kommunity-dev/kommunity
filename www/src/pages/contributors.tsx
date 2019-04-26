@@ -24,7 +24,9 @@ export default ContributorsPage
 
 export const pageQuery = graphql`
   query ContributorsPageQuery {
-    contributors: allKommunityContributor {
+    contributors: allKommunityContributor(
+      sort: { fields: fields___suggestionsCount, order: DESC }
+    ) {
       edges {
         node {
           handle

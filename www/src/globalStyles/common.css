@@ -9,7 +9,8 @@ html {
 }
 
 @media (--smThanTablet) {
-  .html_left-sidebar, .html_right-sidebar {
+  .html_left-sidebar,
+  .html_right-sidebar {
     overflow: hidden;
   }
 }
@@ -25,13 +26,13 @@ html {
 
   * {
     &::-webkit-scrollbar {
-      width: .75rem;
+      width: 0.75rem;
     }
     &::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     }
     &::-webkit-scrollbar-thumb {
-      background: var(--purpleL3)
+      background: var(--purpleL3);
     }
   }
 }
@@ -58,19 +59,20 @@ a {
   font-weight: 700;
 }
 
-input, textarea {
+input,
+textarea {
   border: none;
   font-size: inherit;
 }
 
 code {
   background: var(--greyL2);
-  padding: .15em .25em;
+  padding: 0.15em 0.25em;
 }
 
 pre {
   background: var(--greyL2);
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   box-shadow: var(--shadow2);
   border-radius: 10px;
   & code {
@@ -81,19 +83,20 @@ pre {
 
 blockquote {
   font-size: 1.1em;
-  line-height: 1.7;
-  padding-left: .5rem;
+  line-height: 1.8;
+  padding-left: 0.5rem;
   border-left: 4px solid var(--purple);
-  opacity: .9;
+  opacity: 0.9;
 }
 
 ul {
   list-style-type: circle;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 1rem;
   & li {
-    margin: .5rem 0;
+    margin: 0.5rem 0;
   }
 }
