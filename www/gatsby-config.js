@@ -42,31 +42,41 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: '@dschau/gatsby-source-github',
+      options: {
+        headers: {
+          Authorization: `Bearer ${process.env.GH_ACCESS_TOKEN}` // https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+        },
+        queries: [
+          `{
+            repository(name: "kommunity-content", owner: "kompanion") {
+              name
+              files: object(expression: "master:content") {
+                ... on Tree {
+                  entries {
+                    name
+                    object {
+                      ... on Blob {
+                        text
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }`
+        ]
+      }
+    },
+    // IF DEVELOPING WITH LOCAL COPY OF KOMMUNITY-CONTENT, UNCOMMENT BELOW
+    // 'gatsby-transformer-json',
     // {
-    //   resolve: '@dschau/gatsby-source-github',
+    //   resolve: `gatsby-source-filesystem`,
     //   options: {
-    //     headers: {
-    //       Authorization: `Bearer ${process.env.GH_ACCESS_TOKEN}` // https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
-    //     },
-    //     queries: [
-    //       `{
-    //         repository(name: "kommunity-content", owner: "kompanion") {
-    //           name
-    //           files: object(expression: "master:content") {
-    //             ... on Tree {
-    //               entries {
-    //                 name
-    //                 object {
-    //                   ... on Blob {
-    //                     text
-    //                   }
-    //                 }
-    //               }
-    //             }
-    //           }
-    //         }
-    //       }`
-    //     ]
+    //     name: `localContent`,
+    //     path: `${__dirname}/kommunity-content/content`,
+    //     ignore: [`**/\.*`] // ignore files starting with a dot
     //   }
     // },
     {
@@ -81,15 +91,6 @@ module.exports = {
       options: {
         endpoint:
           'https://kaordi.us19.list-manage.com/subscribe/post?u=3c6e77efbbd8dd39c075858be&amp;id=36ab310d3e'
-      }
-    },
-    'gatsby-transformer-json',
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `localContent`,
-        path: `${__dirname}/kommunity-content/content`,
-        ignore: [`**/\.*`] // ignore files starting with a dot
       }
     },
     `gatsby-plugin-netlify`
