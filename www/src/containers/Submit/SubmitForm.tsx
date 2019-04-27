@@ -200,6 +200,12 @@ export const SubmitForm: React.SFC<{}> = () => {
               </label>
             </div>
           ))}
+          <p style={{ marginTop: 0, fontSize: '.9em' }}>
+            Until we have a system to define this skill level, a{' '}
+            <b>good rule of thumb</b> is to include "For everyone" for tools and
+            for whichever other resources you'd enjoy regardless of how much you
+            know 😉
+          </p>
         </fieldset>
         <fieldset disabled={disableInputs} className="form__group full-width">
           <div className="number-indicator">6</div>
