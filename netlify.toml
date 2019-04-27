@@ -1,4 +1,3 @@
 [build]
-  functions = "lambda"
   publish = "www/public"
   command = "yarn build:www"
