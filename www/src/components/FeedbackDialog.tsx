@@ -34,7 +34,7 @@ export const FeedbackDialog: React.SFC<IFeedbackDialogProps> = ({
         <p>
           We've prepared a quick feedback form to learn from you and define our
           next steps... Would you mind sparing 5 - 10 minutes of your time to
-          fill it out? 😄
+          fill it out and help the kommunity? 😄
         </p>
         <p className="mg-bottom_none">
           <a

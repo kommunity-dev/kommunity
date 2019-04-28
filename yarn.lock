@@ -1466,6 +1466,13 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
+"@xstate/react@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@xstate/react/-/react-0.3.0.tgz#df8fc95fef80c47dfe6694e2a62e6ebeecc8d3b0"
+  integrity sha512-oQ67UcIw/n61LoOQz1DtaoepMLZJehBTZ23iBhhBoLhzLp5YwiSmZ0M5AAKhsQ86C13yzIieWos91cozX6FN0Q==
+  dependencies:
+    xstate "^4.5.0"
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
@@ -4053,10 +4060,11 @@ del@^3.0.0:
     rimraf "^2.2.8"
 
 del@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/del/-/del-4.1.0.tgz#049543b8290e1a9293e2bd150ab3a06f637322b8"
-  integrity sha512-C4kvKNlYrwXhKxz97BuohF8YoGgQ23Xm9lvoHmgT7JaPGprSEjk3+XFled74Yt/x0ZABUHg2D67covzAPUKx5Q==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/del/-/del-4.1.1.tgz#9e8f117222ea44a31ff3a156c049b99052a9f0b4"
+  integrity sha512-QwGuEUouP2kVwQenAsOof5Fv8K9t3D8Ca8NxcXKrIpEHjTXK5J2nXLdP+ALI1cgv8wj7KuwBhTwBkOZSJKM5XQ==
   dependencies:
+    "@types/glob" "^7.1.1"
     globby "^6.1.0"
     is-path-cwd "^2.0.0"
     is-path-in-cwd "^2.0.0"
@@ -5788,10 +5796,10 @@ gatsby-transformer-sharp@^2.1.17:
     probe-image-size "^4.0.0"
     sharp "^0.21.3"
 
-gatsby@^2.3.16:
-  version "2.3.31"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.3.31.tgz#9ec87eea5ac02e74e96748aabffea9c268a45382"
-  integrity sha512-kUkwhkDgPYJX+huwue6kpW8eaERFN6lL8Cym/POeNSqC7O+oUFtxS30Xg1L2JDax8WYVaGP9Wq427Zd7/u9SOQ==
+gatsby@2.3.30:
+  version "2.3.30"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.3.30.tgz#758d13a10f396eb75d480250cb911e75fd40fe5a"
+  integrity sha512-66ZPcbyFhrPa1pJVfG3Xz6z+lJ8IjMxajoFA6yb8aEBKIjw1IN10D25bnUB79XppydNp+3C4EadGMXVWcFFUhg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -11191,9 +11199,9 @@ react-style-singleton@^1.1.0:
     tslib "^1.0.0"
 
 react-use-form-state@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/react-use-form-state/-/react-use-form-state-0.9.0.tgz#bdb47c14bf0bce530be25de46da92ccaf37b79c4"
-  integrity sha512-WPLv5W/aYTcqeXj11TdeSvfuyjU/MUYr4aCx13XzZeQJ3Q5Vtv9egFrF2GpiiBtBYN0ywXRBWr3vu9ZZ5P3PRA==
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/react-use-form-state/-/react-use-form-state-0.9.1.tgz#bdf6c27d4df5ada16b01cd587165b9e7da0139dc"
+  integrity sha512-QDk9wAWV5JHS0tqnZKzUJ3YRzte+45wDAogg5c5x7WhUt8961QdYbFkCDVgf03JMTokRq4k/hJhPjE2zHqfQvQ==
 
 react@^16.8.4:
   version "16.8.6"
@@ -11386,9 +11394,9 @@ regex-not@^1.0.0, regex-not@^1.0.2:
     safe-regex "^1.1.0"
 
 regexp-tree@^0.1.0:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/regexp-tree/-/regexp-tree-0.1.5.tgz#7cd71fca17198d04b4176efd79713f2998009397"
-  integrity sha512-nUmxvfJyAODw+0B13hj8CFVAxhe7fDEAgJgaotBu3nnR+IgGgZq59YedJP5VYTlkEfqjuK6TuRpnymKdatLZfQ==
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/regexp-tree/-/regexp-tree-0.1.6.tgz#84900fa12fdf428a2ac25f04300382a7c0148479"
+  integrity sha512-LFrA98Dw/heXqDojz7qKFdygZmFoiVlvE1Zp7Cq2cvF+ZA+03Gmhy0k0PQlsC1jvHPiTUSs+pDHEuSWv6+6D7w==
 
 regexpp@^2.0.1:
   version "2.0.1"
@@ -14267,7 +14275,7 @@ xstate@^3.1.0:
   resolved "https://registry.yarnpkg.com/xstate/-/xstate-3.3.3.tgz#64177cd4473d4c2424b3df7d2434d835404b09a9"
   integrity sha512-p0ZYDPWxZZZRAJyD3jaGO9/MYioHuxZp6sjcLhPfBZHAprl4EDrZRGDqRVH9VvK8oa6Nrbpf+U5eNmn8KFwO3g==
 
-xstate@^4.3.2:
+xstate@^4.3.2, xstate@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.5.0.tgz#469116d4c3b58412c9d5822543a3c1e2c26bdbe1"
   integrity sha512-7vShhDqfYUWTb1NXZFjk61KTIg6Gi3r21P0M6ApAPCYTJP+pLtbu+uD5Vxaae8Nz21cSu3/OZfvMqN88AkJpHw==

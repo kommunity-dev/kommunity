@@ -1,8 +1,8 @@
-<h1 style="text-align:center">kompanion.dev</h1>
+<h1 style="text-align:center !important">kompanion.dev</h1>
 
-<h2 style="text-align:center">kommunity-curated content on GatsbyJS and React ✨</h2>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0de71404-8492-449a-aca1-3c6366a4e7b3/deploy-status)](https://app.netlify.com/sites/kommunity-beta/deploys)
 
----
+<h2 style="text-align:center !important">kommunity-curated content on GatsbyJS and React ✨</h2>
 
 Why count on old fashioned link aggregators when you have recommendations by your fellow developers? 😉
 

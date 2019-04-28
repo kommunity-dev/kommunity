@@ -8,6 +8,7 @@
     "www"
   ],
   "scripts": {
+    "clean:www": "yarn workspace @kompanion/kommunity-site gatsby clean",
     "develop:www": "yarn workspace @kompanion/kommunity-site gatsby develop",
     "build:www": "yarn workspace @kompanion/kommunity-site gatsby build"
   },

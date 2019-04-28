@@ -1,3 +1,9 @@
 [build]
   publish = "www/public"
   command = "yarn build:www"
+  functions = "serverless"
+[dev]
+  publish = "www/public"
+  command = "yarn develop:www"
+  port = 8000
+  functions = "serverless"
