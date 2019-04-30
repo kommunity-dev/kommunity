@@ -1,6 +1,6 @@
 {
   "recommendations": [
-    "eg2.tslint",
+    "ms-vscode.vscode-typescript-tslint-plugin",
     "chenxsan.vscode-standardjs",
     "esbenp.prettier-vscode",
     "shinnn.stylelint",
