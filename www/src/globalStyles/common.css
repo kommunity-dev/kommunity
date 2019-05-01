@@ -75,6 +75,7 @@ pre {
   padding: 0.5rem 1rem;
   box-shadow: var(--shadow2);
   border-radius: 10px;
+  overflow-x: auto;
   & code {
     background: transparent;
     padding: 0;
