@@ -54,7 +54,7 @@ const toggleHtmlPadding = (shouldAdd: boolean, direction: 'right' | 'left') => {
 // the subscribe modal
 export const NavContext = React.createContext<INavContext>(initialContext)
 
-export const LayoutBasis: React.SFC<{}> = ({ children }) => {
+export const LayoutBasis: React.FunctionComponent<{}> = ({ children }) => {
   const [navState, setNavState] = React.useState<INavState>(initialState)
 
   const toggleMenu = () => {

@@ -13,7 +13,7 @@ export interface IContentCardProps extends IContentCard {
   highlightedUser?: string
 }
 
-export const ContentCard: React.SFC<IContentCardProps> = ({
+export const ContentCard: React.FunctionComponent<IContentCardProps> = ({
   title,
   recommendations,
   topic,

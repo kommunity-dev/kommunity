@@ -15,7 +15,7 @@ export interface IHeaderProps {
   includeSubscribe?: boolean
 }
 
-export const Header: React.SFC<IHeaderProps> = ({
+export const Header: React.FunctionComponent<IHeaderProps> = ({
   includeFilter = false,
   includeMenu = true,
   includeSubscribe = true

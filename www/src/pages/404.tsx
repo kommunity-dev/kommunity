@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import RegularPage from '../layouts/RegularPage'
 
-export const NotFoundPage: React.SFC<{}> = props => {
+export const NotFoundPage: React.FunctionComponent<{}> = props => {
   return (
     <RegularPage
       pageContext={{

@@ -14,7 +14,7 @@ export interface ILevelCheckboxProps {
 }
 
 // TODO: SVG check on checkbox active
-export const LevelCheckbox: React.SFC<ILevelCheckboxProps> = ({
+export const LevelCheckbox: React.FunctionComponent<ILevelCheckboxProps> = ({
   level,
   label,
   checkbox

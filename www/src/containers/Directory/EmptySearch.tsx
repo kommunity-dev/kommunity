@@ -2,7 +2,7 @@ import * as React from 'react'
 import { SearchCloudIcon } from '../../components/generalIcons'
 import { NavContext } from '../../layouts/LayoutBasis'
 
-export const EmptySearch: React.SFC<{}> = () => {
+export const EmptySearch: React.FunctionComponent<{}> = () => {
   const { toggleFilters, filterOpen } = React.useContext(NavContext)
   return (
     <section className="directory__empty-search">

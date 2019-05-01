@@ -26,9 +26,9 @@ export interface IContributorTemplateProps {
   }
 }
 
-export const ContributorTemplate: React.SFC<IContributorTemplateProps> = ({
-  data: { contributor, suggestions }
-}) => {
+export const ContributorTemplate: React.FunctionComponent<
+  IContributorTemplateProps
+> = ({ data: { contributor, suggestions } }) => {
   const { handle } = contributor
   const { name = handle, bio, avatar240 } = contributor.fields
   const lastName = name.split(' ')[1] || undefined

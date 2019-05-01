@@ -4,13 +4,17 @@ export interface IIconProps {
   fill?: string
 }
 
-export const QuoteIcon: React.SFC<IIconProps> = ({ fill = 'currentColor' }) => (
+export const QuoteIcon: React.FunctionComponent<IIconProps> = ({
+  fill = 'currentColor'
+}) => (
   <svg viewBox="0 0 33 20" fill={fill} xmlns="http://www.w3.org/2000/svg">
     <path d="M.0760271 7.42668C.552753 10.5156 3.26643 12.7169 6.34681 12.8589c-.7701 2.7693-2.64033 3.87-4.91395 4.5091-.22002.071-.18335.284-.18335.284l.36671 2.2013s.03667.1775.33004.142C9.7939 19.1432 15.1112 13.3559 14.1211 6.32603 13.2043 1.4619 9.28051-.41984 5.65006.0772238 2.0196.645297-.474041 3.91172.0760271 7.42668zM25.1225 12.8589c-.7335 2.7693-2.677 3.87-4.914 4.5091-.22.071-.1833.284-.1833.284l.33 2.2013s.0367.1775.3301.142c7.8476-.8166 13.1282-6.6039 12.2115-13.63376-.9535-4.89963-4.914-6.781379-8.5078-6.2843146C20.7586.645299 18.265 3.91172 18.8517 7.42668c.4767 3.12442 3.1537 5.32572 6.2708 5.43222z" />
   </svg>
 )
 
-export const MailIcon: React.SFC<IIconProps> = ({ fill = 'currentColor' }) => (
+export const MailIcon: React.FunctionComponent<IIconProps> = ({
+  fill = 'currentColor'
+}) => (
   <svg viewBox="0 0 100 100" fill={fill} xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
@@ -25,7 +29,9 @@ export const MailIcon: React.SFC<IIconProps> = ({ fill = 'currentColor' }) => (
   </svg>
 )
 
-export const CheckIcon: React.SFC<IIconProps> = ({ fill = 'currentColor' }) => (
+export const CheckIcon: React.FunctionComponent<IIconProps> = ({
+  fill = 'currentColor'
+}) => (
   <svg viewBox="0 0 100 100" fill={fill} xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#check-clip)">
       <path
@@ -42,7 +48,7 @@ export const CheckIcon: React.SFC<IIconProps> = ({ fill = 'currentColor' }) => (
   </svg>
 )
 
-export const FilterIcon: React.SFC<IIconProps> = ({
+export const FilterIcon: React.FunctionComponent<IIconProps> = ({
   fill = 'currentColor'
 }) => (
   <svg viewBox="0 0 100 100" fill={fill} xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +67,9 @@ export const FilterIcon: React.SFC<IIconProps> = ({
   </svg>
 )
 
-export const MenuIcon: React.SFC<IIconProps> = ({ fill = 'currentColor' }) => (
+export const MenuIcon: React.FunctionComponent<IIconProps> = ({
+  fill = 'currentColor'
+}) => (
   <svg viewBox="0 0 100 100" fill={fill} xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
@@ -71,7 +79,7 @@ export const MenuIcon: React.SFC<IIconProps> = ({ fill = 'currentColor' }) => (
   </svg>
 )
 
-export const ChevronIcon: React.SFC<IIconProps> = ({
+export const ChevronIcon: React.FunctionComponent<IIconProps> = ({
   fill = 'currentColor'
 }) => (
   <svg viewBox="0 0 100 100" fill={fill} xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +91,9 @@ export const ChevronIcon: React.SFC<IIconProps> = ({
   </svg>
 )
 
-export const CrossIcon: React.SFC<IIconProps> = ({ fill = 'currentColor' }) => (
+export const CrossIcon: React.FunctionComponent<IIconProps> = ({
+  fill = 'currentColor'
+}) => (
   <svg viewBox="0 0 100 100" fill={fill} xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
@@ -98,7 +108,7 @@ export const CrossIcon: React.SFC<IIconProps> = ({ fill = 'currentColor' }) => (
   </svg>
 )
 
-export const CollaboratorsIcon: React.SFC<IIconProps> = ({
+export const CollaboratorsIcon: React.FunctionComponent<IIconProps> = ({
   fill = 'currentColor'
 }) => (
   <svg viewBox="0 0 100 100" fill={fill} xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +127,7 @@ export const CollaboratorsIcon: React.SFC<IIconProps> = ({
   </svg>
 )
 
-export const SearchCloudIcon: React.SFC<{}> = () => (
+export const SearchCloudIcon: React.FunctionComponent<{}> = () => (
   <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#search-cloud__clip)">
       <path

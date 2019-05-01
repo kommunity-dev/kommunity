@@ -35,6 +35,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "serve": "gatsby serve",
+    "lint": "tslint --project src --fix",
     "build": "gatsby build"
   },
   "devDependencies": {

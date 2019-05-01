@@ -14,9 +14,11 @@ export interface IContributorsPageProps {
   }
 }
 
-export const ContributorsPage: React.SFC<IContributorsPageProps> = ({
-  data: { contributors }
-}) => <AllContributorsTemplate contributors={contributors.edges} />
+export const ContributorsPage: React.FunctionComponent<
+  IContributorsPageProps
+> = ({ data: { contributors } }) => (
+  <AllContributorsTemplate contributors={contributors.edges} />
+)
 
 ContributorsPage.displayName = 'ContributorsPage'
 

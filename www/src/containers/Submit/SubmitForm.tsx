@@ -41,7 +41,7 @@ export const submissionInitialState: ISubmissionFormFields = {
   comment: ''
 }
 
-export const SubmitForm: React.SFC<{}> = () => {
+export const SubmitForm: React.FunctionComponent<{}> = () => {
   // General form state
   const [state, { text, textarea, radio, label, url }] = useFormState<
     ISubmissionFormFields

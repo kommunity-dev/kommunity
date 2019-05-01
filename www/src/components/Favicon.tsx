@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-export const Favicon: React.SFC<{ styles?: React.CSSProperties }> = ({
-  styles
-}) => (
+export const Favicon: React.FunctionComponent<{
+  styles?: React.CSSProperties
+}> = ({ styles }) => (
   <svg
     viewBox="0 0 47 47"
     fill="none"

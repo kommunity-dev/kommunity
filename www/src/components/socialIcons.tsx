@@ -4,7 +4,7 @@ export interface IIconProps {
   fill?: string
 }
 
-export const GithubIcon: React.SFC<IIconProps> = ({
+export const GithubIcon: React.FunctionComponent<IIconProps> = ({
   fill = 'currentColor'
 }) => (
   <svg viewBox="0 0 24 24" fill={fill} xmlns="http://www.w3.org/2000/svg">
@@ -12,7 +12,7 @@ export const GithubIcon: React.SFC<IIconProps> = ({
   </svg>
 )
 
-export const TwitterIcon: React.SFC<IIconProps> = ({
+export const TwitterIcon: React.FunctionComponent<IIconProps> = ({
   fill = 'currentColor'
 }) => (
   <svg viewBox="0 0 24 24" fill={fill} xmlns="http://www.w3.org/2000/svg">

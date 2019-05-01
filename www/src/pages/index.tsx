@@ -19,7 +19,9 @@ export interface IIndexPageProps {
   }
 }
 
-export const IndexPage: React.SFC<IIndexPageProps> = ({ data }) => {
+export const IndexPage: React.FunctionComponent<IIndexPageProps> = ({
+  data
+}) => {
   return (
     <>
       <PageMeta

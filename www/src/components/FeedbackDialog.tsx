@@ -13,7 +13,7 @@ export interface IFeedbackDialogProps {
   toggleDialog: () => void
 }
 
-export const FeedbackDialog: React.SFC<IFeedbackDialogProps> = ({
+export const FeedbackDialog: React.FunctionComponent<IFeedbackDialogProps> = ({
   isOpen,
   toggleDialog
 }) => {

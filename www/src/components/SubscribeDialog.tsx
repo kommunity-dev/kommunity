@@ -28,10 +28,9 @@ interface ISubscriptionState {
   subscriptionEmail: string
 }
 
-export const SubscribeDialog: React.SFC<ISubscribeDialogProps> = ({
-  isOpen,
-  toggleDialog
-}) => {
+export const SubscribeDialog: React.FunctionComponent<
+  ISubscribeDialogProps
+> = ({ isOpen, toggleDialog }) => {
   const [formState, { checkbox, label, email }] = useFormState<
     ISubscriptionState
   >(

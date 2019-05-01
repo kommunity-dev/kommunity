@@ -13,7 +13,7 @@ interface IRegularPage {
   }
 }
 
-export const RegularPage: React.SFC<IRegularPage> = ({
+export const RegularPage: React.FunctionComponent<IRegularPage> = ({
   children,
   pageContext
 }) => {

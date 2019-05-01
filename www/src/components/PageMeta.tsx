@@ -10,7 +10,7 @@ export interface IPageMetaProps {
   ogImage?: string
 }
 
-export const PageMeta: React.SFC<IPageMetaProps> = ({
+export const PageMeta: React.FunctionComponent<IPageMetaProps> = ({
   title,
   metaDescription,
   ogType = 'website',

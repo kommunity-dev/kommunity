@@ -16,7 +16,7 @@ export interface IFilterSidebarProps {
   checkbox: any
 }
 
-export const FilterSidebar: React.SFC<IFilterSidebarProps> = ({
+export const FilterSidebar: React.FunctionComponent<IFilterSidebarProps> = ({
   checkbox,
   label
 }) => {

@@ -21,7 +21,7 @@ export interface IAllContributorsTemplateProps {
   }>
 }
 
-export const AllContributorsTemplate: React.SFC<
+export const AllContributorsTemplate: React.FunctionComponent<
   IAllContributorsTemplateProps
 > = ({ contributors }) => {
   const { length: count } = contributors

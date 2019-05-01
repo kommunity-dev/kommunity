@@ -14,7 +14,9 @@ export const WinkEmoji = () => (
   </svg>
 )
 
-export const LevelIcon: React.SFC<{ level: TSkillLevels }> = ({ level }) => (
+export const LevelIcon: React.FunctionComponent<{ level: TSkillLevels }> = ({
+  level
+}) => (
   <svg
     viewBox="0 0 100 100"
     fill="none"
@@ -50,9 +52,9 @@ export const skillLevelIcon = {
   allLevels: () => <WinkEmoji />
 }
 
-export const SkillLevelIndicator: React.SFC<{ level: TSkillLevels }> = ({
-  level
-}) => (
+export const SkillLevelIndicator: React.FunctionComponent<{
+  level: TSkillLevels
+}> = ({ level }) => (
   <div className="skill-level">
     {readableLevels[level]} <span>{skillLevelIcon[level]()}</span>
   </div>

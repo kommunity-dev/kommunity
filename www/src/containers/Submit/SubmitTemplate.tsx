@@ -5,7 +5,7 @@ import Head from 'react-helmet'
 import { Favicon } from '../../components/Favicon'
 import SubmitForm from './SubmitForm'
 
-export const SubmitTemplate: React.SFC<{}> = () => {
+export const SubmitTemplate: React.FunctionComponent<{}> = () => {
   return (
     <>
       <Head>

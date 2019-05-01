@@ -33,7 +33,7 @@ const initialState: IFilterFields = {
 // TODO: only load the first 20 contents and then fetch from a JSON file somewhere else if the user interacts with the filters ;)
 
 // TODO: consider adding a button to remove all filters
-export const Directory: React.SFC<IDirectoryProps> = ({
+export const Directory: React.FunctionComponent<IDirectoryProps> = ({
   content,
   children
 }) => {

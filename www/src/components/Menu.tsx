@@ -9,7 +9,7 @@ import { GithubIcon, TwitterIcon } from './socialIcons'
 
 import './styles/menu.css'
 
-export const Menu: React.SFC<{}> = () => {
+export const Menu: React.FunctionComponent<{}> = () => {
   const { toggleMenu, menuOpen, toggleSubscribe } = React.useContext(NavContext)
   return (
     <aside className={`menu sidebar ${menuOpen ? 'sidebar_open' : ''}`}>
@@ -61,7 +61,13 @@ export const Menu: React.SFC<{}> = () => {
               <MailIcon />{' '}
             </a>
           </div>
-          <p style={{ marginBottom: '1rem', fontSize: '.9em', textAlign: 'center' }}>
+          <p
+            style={{
+              marginBottom: '1rem',
+              fontSize: '.9em',
+              textAlign: 'center'
+            }}
+          >
             Made with 💙 by{' '}
             <a href="https://kaordica.design" target="_blank" rel="noopener">
               Kaordica

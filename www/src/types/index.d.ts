@@ -15,6 +15,6 @@ declare module '@reach/dialog' {
     children?: React.ReactNode
   } & React.HTMLProps<HTMLDivElement>
 
-  export const Dialog: React.SFC<DialogProps>
-  export const DialogOverlay: React.SFC<DialogOverlayProps>
+  export const Dialog: React.FunctionComponent<DialogProps>
+  export const DialogOverlay: React.FunctionComponent<DialogOverlayProps>
 }

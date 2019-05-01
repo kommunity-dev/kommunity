@@ -18,7 +18,7 @@ const fallbackSubmission: ISubmissionPayload = {
   lastUpdated: ''
 }
 
-export const SubmissionPlaceholder: React.SFC<
+export const SubmissionPlaceholder: React.FunctionComponent<
   ISubmissionPlaceholderProps
 > = props => {
   const clipboard = useClipboard({ copiedTimeout: 1250, selectOnCopy: false })
