@@ -1,8 +1,11 @@
 import { ISubmissionPayload } from '@kompanion/types'
 import { slugifyString } from '@kompanion/utils'
 import * as React from 'react'
+import { useClipboard } from 'use-clipboard-copy'
 
 import { submissionInitialState } from './SubmitForm'
+
+import '../../components/styles/copy.css'
 
 export interface ISubmissionPlaceholderProps {
   submission: ISubmissionPayload
@@ -18,9 +21,26 @@ const fallbackSubmission: ISubmissionPayload = {
 export const SubmissionPlaceholder: React.SFC<
   ISubmissionPlaceholderProps
 > = props => {
+  const clipboard = useClipboard({ copiedTimeout: 1250, selectOnCopy: false })
   const resetSubmission = () => props.setSubmission(null)
   const { submission = fallbackSubmission } = props
   const submittedUrl = (submission && submission.url) || ''
+  const formattedJson = JSON.stringify(submission, null, 2)
+
+  const copy = () => {
+    clipboard.copy(formattedJson)
+    if (document && window && window.getSelection && document.querySelector) {
+      const selection = window.getSelection()
+      const range = document.createRange()
+      const textNode = document.querySelector('#content-json')
+
+      if (selection && range && textNode) {
+        range.selectNodeContents(textNode)
+        selection.removeAllRanges()
+        selection.addRange(range)
+      }
+    }
+  }
   return (
     <section>
       <h2 style={{ marginTop: '2.5em' }}>
@@ -42,8 +62,16 @@ export const SubmissionPlaceholder: React.SFC<
       <p style={{ marginBottom: 0 }}>
         <span className="number-indicator">1</span> copy the JSON below
       </p>
-      <pre>
-        <code>{JSON.stringify(submission, null, 2)}</code>
+      <pre className="copy__wrapper">
+        <button
+          onClick={copy}
+          className={`button button_secondary copy__button ${
+            clipboard.copied ? 'copied' : ''
+          }`}
+        >
+          {clipboard.copied ? 'Copied!' : 'Copy'}
+        </button>
+        <code id="content-json">{formattedJson}</code>
       </pre>
       <p>
         <span className="number-indicator">2</span> start creating a new file in

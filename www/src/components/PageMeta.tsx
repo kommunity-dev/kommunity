@@ -21,9 +21,6 @@ export const PageMeta: React.SFC<IPageMetaProps> = ({
     <Helmet>
       <link rel="icon" href={favicon} />
 
-      {/* TODO: remove meta robots */}
-      <meta name="robots" content="noindex nofollow" />
-
       {/* Basic stuff */}
       <title>{title}</title>
       {metaDescription && <meta name="description" content={metaDescription} />}
