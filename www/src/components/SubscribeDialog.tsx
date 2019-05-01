@@ -1,5 +1,5 @@
 import { prospectiveTopics } from '@kompanion/mock-data'
-import { TTopics } from '@kompanion/types'
+import { TTopics } from '@kompanion/kommunity-types'
 import {
   Dialog
   // DialogOverlay,

@@ -1,4 +1,9 @@
-import { IContentCard, TFormats, TSkillLevels, TTopics } from '@kompanion/types'
+import {
+  IContentCard,
+  TFormats,
+  TSkillLevels,
+  TTopics
+} from '@kompanion/kommunity-types'
 import * as React from 'react'
 import { useFormState } from 'react-use-form-state'
 
@@ -47,7 +52,7 @@ export const Directory: React.SFC<IDirectoryProps> = ({
 
   const filterContent = async (nextState: IFilterFields) => {
     const { formats, skillLevels, topics } = nextState
-    const newContent = await content.filter(({ node }) => {
+    const newContent = content.filter(({ node }) => {
       if (
         typeof node.skillLevel === 'string' &&
         node.skillLevel !== 'allLevels' &&

@@ -5,7 +5,9 @@
   "description": "Workspace set-up for the kompanion website",
   "workspaces": [
     "lambda",
-    "www"
+    "www",
+    "types",
+    "mock-data"
   ],
   "scripts": {
     "develop:www": "yarn workspace @kompanion/kommunity-site gatsby develop",

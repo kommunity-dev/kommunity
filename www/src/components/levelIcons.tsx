@@ -1,4 +1,4 @@
-import { TSkillLevels } from '@kompanion/types'
+import { TSkillLevels } from '@kompanion/kommunity-types'
 import { readableLevels } from '@kompanion/mock-data'
 import * as React from 'react'
 

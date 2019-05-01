@@ -10,7 +10,24 @@ kommunity.dev aims to ease your way into learning / getting deeper into GatsbyJS
 
 ## Contributing
 
-See [kommunity's contribution page](https://kommunity.dev/contributing) for more info ;)
+See the section below for info on contributing with code. For other types of contributions, refer to the [kommunity's contribution page](https://kommunity.dev/contributing) for more info ;)
+
+### Contributing with code
+
+1. Clone this repo;
+1. Run `yarn` - this will link all the internal packages and install everything needed to develop the website;
+1. Run `yarn develop:www` to run the website and voilà!
+
+The folder structure:
+
+- The Gatsby website is found in `www`;
+- The `serverless` folder is still in its early stages and is subject to change;
+- Typescript definitions used throughout the project can be acessed under the `types` folder;
+- And, finally, `mock-data` is a folder dedicated to host reusable data such as a list of topics :)
+
+Any questions, just file an issue and we'll be happy to solve them :)
+
+**PS:** The CSS right now is a mess, and we know it. Using plain `.css` files is helping a ton with performance and build times, but it's being done in a poor manner at the moment... feel free to propose changes to its structure!
 
 ## Infrastructure
 
@@ -22,6 +39,7 @@ See [kommunity's contribution page](https://kommunity.dev/contributing) for more
 - For the styles, kommunity.dev currently uses plain `.css` files
   - [PostCSS](https://postcss.org) transforms the CSS to support older browsers
   - and style is ~poorly~ linted by [stylelint](https://stylelint.io/) (it's not set-up properly yet, so it's not taking much effect)
-- This repo uses `yarn workspaces` as, in the future, it'll also be home to serverless functions that will allow for more advanced features 🤗
+- We use some helper functions from the `[@kompanion/utils](https://github.com/kompanion/utilities/tree/master/utils)` packages in the code.
+- And this repo uses `yarn workspaces` as it's also home to serverless functions and types that can be applied to other side projects 🤗
 
 Feel free to create an issue or PR with suggested changes to the architecture and code!

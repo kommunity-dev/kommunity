@@ -1,4 +1,4 @@
-import { TSkillLevels } from '@kompanion/types'
+import { TSkillLevels } from '@kompanion/kommunity-types'
 import * as React from 'react'
 
 import { CheckIcon } from './generalIcons'

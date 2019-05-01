@@ -9,7 +9,7 @@ import {
   TFormats,
   TSkillLevels,
   TTopics
-} from '@kompanion/types'
+} from '@kompanion/kommunity-types'
 import { capitalizeFirstLetter, scrollToId } from '@kompanion/utils'
 import * as React from 'react'
 import { useFormState } from 'react-use-form-state'

@@ -40,7 +40,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/plugin-transform-typescript": "^7.4.0",
-    "@kompanion/types": "^0.0.1",
+    "@kompanion/kommunity-types": "^0.0.1",
     "axios": "^0.18.0",
     "cssnano": "^4.1.10",
     "postcss-bem-linter": "^3.3.0",

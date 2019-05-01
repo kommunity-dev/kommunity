@@ -1,0 +1,18 @@
+{
+  "name": "@kompanion/mock-data",
+  "version": "0.0.2",
+  "license": "Apache-2.0",
+  "main": "index.ts",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "dependencies": {
+    "@kompanion/kommunity-types": "^0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.4"
+  }
+}

@@ -1,4 +1,4 @@
-import { ISubmissionPayload } from '@kompanion/types'
+import { ISubmissionPayload } from '@kompanion/kommunity-types'
 import { slugifyString } from '@kompanion/utils'
 import * as React from 'react'
 import { useClipboard } from 'use-clipboard-copy'

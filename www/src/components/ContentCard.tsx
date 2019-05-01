@@ -1,5 +1,5 @@
 import { formatCTAs } from '@kompanion/mock-data'
-import { IContentCard } from '@kompanion/types'
+import { IContentCard } from '@kompanion/kommunity-types'
 import { extractDomain, textToParagraphs } from '@kompanion/utils'
 import * as React from 'react'
 

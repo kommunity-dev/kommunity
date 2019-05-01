@@ -1,4 +1,4 @@
-import { IContentCard } from '@kompanion/types'
+import { IContentCard } from '@kompanion/kommunity-types'
 import { graphql } from 'gatsby'
 import * as React from 'react'
 
