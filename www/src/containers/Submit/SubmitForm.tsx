@@ -135,7 +135,7 @@ export const SubmitForm: React.SFC<{}> = () => {
             maxLength={TITLE_MAX_LENGTH}
             required={true}
             className="form__input"
-            placeholder="Try to be descriptive and to-the-point."
+            placeholder="Try using the actual page's title"
           />
           <div className="form__input-validation">
             <div
@@ -147,7 +147,7 @@ export const SubmitForm: React.SFC<{}> = () => {
         </fieldset>
         <fieldset disabled={disableInputs} className="form__group">
           <div className="number-indicator">3</div>
-          <label {...label('comment')}>Why is it important?</label>
+          <label {...label('comment')}>Why is it relevant?</label>
           <textarea
             className="form__input"
             placeholder="Tell other developers why you think they should consume this resource ;)"
