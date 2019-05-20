@@ -9,6 +9,7 @@ import PageMeta from '../components/PageMeta'
 import { GithubIcon } from '../components/socialIcons'
 
 import './contributor-template.css'
+import NotFoundPage from '../pages/404'
 
 export interface IContributorTemplateProps {
   data: {
@@ -30,8 +31,14 @@ export const ContributorTemplate: React.FunctionComponent<
   IContributorTemplateProps
 > = ({ data: { contributor, suggestions } }) => {
   const { handle } = contributor
-  const { name = handle, bio, avatar240 } = contributor.fields
-  const lastName = name.split(' ')[1] || undefined
+  const { bio, avatar240 } = contributor.fields
+  const name =
+    (typeof contributor.fields.name === 'string' &&
+      contributor.fields.name !== '' &&
+      contributor.fields.name) ||
+    handle
+  const lastName = (name && name.split(' ')[1]) || undefined
+
   return (
     <>
       <PageMeta
@@ -42,7 +49,9 @@ export const ContributorTemplate: React.FunctionComponent<
         ogType="profile"
         ogImage={avatar240}
       >
-        <meta property="profile:first_name" content={name.split(' ')[0]} />
+        {name && (
+          <meta property="profile:first_name" content={name.split(' ')[0]} />
+        )}
         {lastName && <meta property="profile:last_name" content={lastName} />}
         <meta property="profile:username" content={handle} />
         <meta property="twitter:creator" content={`@${handle}`} />
