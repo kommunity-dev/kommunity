@@ -3,16 +3,11 @@ require('dotenv').config({
 })
 
 module.exports = {
-  __experimentalThemes: [
-    {
-      resolve: 'gatsby-theme-koncrete',
-      options: {
-        useTypescript: true,
-        useSharp: false
-      }
-    }
-  ],
   plugins: [
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-typescript',
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
@@ -35,7 +30,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
           default: require.resolve('./src/layouts/RegularPage.tsx')
@@ -50,7 +45,7 @@ module.exports = {
         },
         queries: [
           `{
-            repository(name: "kommunity-content", owner: "kompanion") {
+            repository(name: "kommunity-content", owner: "kommunity-dev") {
               name
               files: object(expression: "master:content") {
                 ... on Tree {
@@ -69,6 +64,7 @@ module.exports = {
         ]
       }
     },
+    // `gatsby-plugin-preact`,
     // IF DEVELOPING WITH LOCAL COPY OF KOMMUNITY-CONTENT, UNCOMMENT BELOW
     // 'gatsby-transformer-json',
     // {
